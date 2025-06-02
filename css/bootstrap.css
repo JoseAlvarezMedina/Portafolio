@@ -4362,6 +4362,12 @@ input[type="button"].btn-block {
   text-decoration: none;
 }
 
+.navbar-brand img {
+  max-height: 50px;    /* Altura máxima del logo; el ancho se ajustará proporcionalmente */
+  width: auto;         /* Asegura que la imagen respete su proporción */
+  display: block;      /* Elimina espacio blanco inferior */
+}
+
 .navbar-nav {
   display: -ms-flexbox;
   display: flex;
