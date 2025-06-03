@@ -33,79 +33,92 @@
 <body data-spy="scroll" data-target=".fixed-top">
     
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
-        <div class="container">
-            
-            <!-- Image Logo -->
-            <a class="navbar-brand logo-image" href="index.html"><img src="images/logonavbar2.png" alt="alternative"></a>  
-
-            <!-- Text Logo - Use this if you don't have a graphic logo -->
-            <!-- <a class="navbar-brand logo-text page-scroll" href="index.html">Mark</a> -->
-
-            <button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link page-scroll" href="#header">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link page-scroll" href="#about">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link page-scroll" href="#services">Services</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Drop</a>
-                        <div class="dropdown-menu" aria-labelledby="dropdown01">
-                            <a class="dropdown-item page-scroll" href="project.html">Project Details</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item page-scroll" href="terms.html">Terms Conditions</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item page-scroll" href="privacy.html">Privacy Policy</a>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link page-scroll" href="#contact">Contact</a>
-                    </li>
-                </ul>
-                <span class="nav-item social-icons">
-                    <span class="fa-stack">
-                        <a href="#your-link">
-                            <i class="fas fa-circle fa-stack-2x"></i>
-                            <i class="fab fa-facebook-f fa-stack-1x"></i>
-                        </a>
-                    </span>
-                    <span class="fa-stack">
-                        <a href="#your-link">
-                            <i class="fas fa-circle fa-stack-2x"></i>
-                            <i class="fab fa-twitter fa-stack-1x"></i>
-                        </a>
-                    </span>
-                </span>
-            </div> <!-- end of navbar-collapse -->
-        </div> <!-- end of container -->
-    </nav> <!-- end of navbar -->
-    <!-- end of navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark navbar-custom">
+    <div class="container">
+        <!-- Logo -->
+        <a class="navbar-brand" href="index.html">
+        <img src="images/logonavbar2.png" alt="Logo de Jose Alvarez">
+        </a>
+        <!-- Botón de colapso en móviles -->
+        <button class="navbar-toggler" type="button" data-toggle="offcanvas" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Enlaces -->
+        <div class="navbar-collapse offcanvas-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+            <a class="nav-link" href="#header">Home</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="#services">Services</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="#projects">Projects</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
+            </li>
+        </ul>
+        <span class="nav-item social-icons">
+            <a href="https://facebook.com/tu-perfil" class="text-white mx-2">
+            <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://twitter.com/tu-perfil" class="text-white mx-2">
+            <i class="fab fa-twitter"></i>
+            </a>
+        </span>
+        </div>
+    </div>
+    </nav>
 
 
-    <!-- Header -->
-    <header id="header" class="header">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="text-container">
-                        <h1 class="h1-large">Driving innovation with AI and data science expertise</h1>
-                        <a class="btn-solid-lg page-scroll" href="#about">Discover</a>
-                        <a class="btn-outline-lg page-scroll" href="#contact"><i class="fas fa-user"></i>Contact Me</a>
-                    </div> <!-- end of text-container -->
-                </div> <!-- end of col -->
-            </div> <!-- end of row -->
-        </div> <!-- end of container -->
-    </header> <!-- end of header -->
-    <!-- end of header -->
+
+    <!-- Header (Hero Section) -->
+    <header id="header" class="header-hero">
+    <div class="overlay"></div>
+    <div class="container h-100">
+        <div class="row h-100 align-items-center">
+        <div class="col-lg-7">
+            <h1 class="hero-title">
+            Driving innovation with AI &amp; data science expertise
+            </h1>
+
+            <!-- Subtítulo animado (Typed.js) -->
+            <p class="hero-subtitle">
+            <span id="typed-text"></span>
+            </p>
+
+            <!-- Botones actualizados -->
+            <div class="hero-buttons">
+            <!-- 1) Portfolio: antes “Discover” -->
+            <a
+                class="btn btn-primary btn-lg mr-3"
+                href="#projects"
+                role="button"
+            >
+                Portfolio
+            </a>
+
+            <!-- 2) Download CV: antes “Contact Me” -->
+            <!-- Usamos <a download> para forzar descarga en lugar de abrir en nueva pestaña -->
+            <a
+                class="btn btn-outline-light btn-lg"
+                href="path/to/your-cv.pdf"
+                download="JoseAlvarez_CV.pdf"
+                role="button"
+            >
+                <i class="fas fa-download"></i> Download CV
+            </a>
+            </div>
+        </div>
+        </div>
+    </div>
+    </header>
+
+
 
 
     <!-- About-->
@@ -600,6 +613,7 @@
     
     	
     <!-- Scripts -->
+     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <script src="js/jquery.min.js"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
     <script src="js/bootstrap.min.js"></script> <!-- Bootstrap framework -->
     <script src="js/jquery.easing.min.js"></script> <!-- jQuery Easing for smooth scrolling between anchors -->

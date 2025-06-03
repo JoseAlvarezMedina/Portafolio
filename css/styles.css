@@ -1278,3 +1278,135 @@ a:hover.back-to-top {
 	/* end of extra pages */
 }
 /* end of min-width 1200px */
+
+
+/* Cambios al nuevo css /*
+/* ──────────────── HEADER (HERO) ──────────────── */
+
+/* 1. Hacienda que el header ocupe el 80% del alto de pantalla */
+.header-hero {
+  height: 100vh; /* Antes era 80vh, ahora cubre toda la ventana */
+  background: url("../images/herobackground.jpg") no-repeat center center;
+  background-size: cover;
+  position: relative;
+  display: flex;
+  align-items: center;
+  /* Agregamos un padding-top manual igual a la altura de la navbar (~80px)
+     para que el contenido (título, botones) no quede “detrás” de la barra. */
+  padding-top: 80px;
+}
+
+
+/* 2. Capa semitransparente sobre el fondo para contraste */
+.header-hero .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+/* 3. Contenedor de texto sobre la capa */
+.header-hero .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* 4. Título principal */
+.hero-title {
+  font-size: 2.5rem;             /* Ajusta según prefieras */
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+}
+
+/* Hacer que el texto se escale en pantallas pequeñas */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+}
+
+.hero-subtitle {
+  font-size: 1.1rem;
+  color: #cccccc;
+  margin-bottom: 1.5rem;
+  white-space: nowrap; /* Evita que la línea salte si la frase es más larga */
+}
+
+/* 6. Botones CTA */
+.hero-buttons .btn {
+  min-width: 150px;
+  padding: 0.75rem 1.25rem;
+  font-size: 1rem;
+}
+
+/* 7. Asegurar que haya espacio entre botones */
+.hero-buttons .btn + .btn {
+  margin-left: 1rem;
+}
+
+/* ───────────── SUBIR MENÚ. CAMBIO DE FONDO AL SCROLL ───────────── */
+
+/* ──────────────── NAVBAR TRANSPARENTE ──────────────── */
+
+/* 1. Navbar en estado “inicial” (totalmente transparente) */
+.navbar-custom {
+  position: fixed;              /* La fija arriba */
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: transparent !important; 
+  transition: background-color 0.3s ease, padding 0.3s ease;
+  padding: 0.3rem 0;            /* Menos padding vertical (antes 1rem) */
+  z-index: 9999;
+}
+
+/* 2. Al hacer scroll, cambiamos a fondo semisólido y también más compacta */
+.navbar-custom.scrolled {
+  background-color: rgba(0, 0, 0, 0.85) !important;
+  padding: 0.2rem 0;            /* Aún menos padding al scrollear */
+}
+
+/* 3. Logo más pequeño para que no agrande la barra */
+.navbar-brand img {
+  max-height: 50px;             /* Antes tenías 120px; ahora 50px */
+  width: auto;
+  display: block;
+}
+
+/* 4. Enlaces del menú (sin cambios en color, solo centran verticalmente) */
+.navbar-custom .nav-link {
+  color: #ffffff;
+  font-weight: 500;
+  margin-left: 1rem;
+  transition: color 0.2s ease;
+}
+
+/* Hover / activo */
+.navbar-custom .nav-link:hover,
+.navbar-custom .nav-link:focus {
+  color: #09f;
+  text-decoration: none;
+}
+
+/* 5. Íconos sociales */
+.navbar-custom .social-icons a {
+  font-size: 1.1rem;
+  color: #ffffff;
+  margin-left: 0.75rem; /* Un poco de espacio entre íconos */
+  transition: color 0.2s ease;
+}
+
+.navbar-custom .social-icons a:hover {
+  color: #09f;
+}
+
+/* 6. Quitar padding-top del body (solo si ya lo habías puesto) */
+body {
+  margin: 0;
+  padding-top: 0;  /* Si habías agregado padding para “bajar” el contenido, quítalo */
+}

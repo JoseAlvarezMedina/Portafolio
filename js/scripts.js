@@ -76,3 +76,40 @@
 	});
 
 })(jQuery);
+
+
+/* Añadido */
+
+// scripts.js
+
+// 1) Lógica existente para que la navbar cambie al hacer scroll
+window.addEventListener("scroll", function () {
+  const navbar = document.querySelector(".navbar-custom");
+  if (window.scrollY > 50) {
+    navbar.classList.add("scrolled");
+  } else {
+    navbar.classList.remove("scrolled");
+  }
+});
+
+// 2) Configuración de Typed.js para el subtítulo animado
+document.addEventListener("DOMContentLoaded", function () {
+  new Typed("#typed-text", {
+    strings: [
+      "Machine learning engineer",
+      "Data scientist",
+      "Artificial intelligence",
+      "Web developer",
+      "Mathematician",
+      "Computer scientist"
+    ],
+    typeSpeed: 60,      // Velocidad de escritura (ms por carácter)
+    backSpeed: 30,      // Velocidad de borrado (ms por carácter)
+    backDelay: 1500,    // Tiempo (ms) antes de borrar la frase completa
+    startDelay: 500,    // Retardo (ms) antes de arrancar la primera escritura
+    loop: true,         // Repite en bucle todas las frases
+    shuffle: false,     // No barajar; se muestran en el orden dado
+    showCursor: true,   // Muestra el cursor parpadeante
+    cursorChar: "|",    // Carácter del “cursor”
+  });
+});
