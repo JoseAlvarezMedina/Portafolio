@@ -1410,3 +1410,91 @@ body {
   margin: 0;
   padding-top: 0;  /* Si habías agregado padding para “bajar” el contenido, quítalo */
 }
+
+
+/* ===== Estilos para Core Skills (tarjetas con iconos) ===== */
+
+.basic-1 {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.bg-gray {
+  background-color: #212529;
+}
+
+/* Destacar keywords */
+.highlight {
+  text-decoration: underline;
+  text-decoration-color: #09f;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* Título de sección */
+.text-container.first h2 {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+/* Lead / párrafo descriptivo */
+.text-container.first p.lead,
+.text-container.first p {
+  font-size: 1rem;
+  color: #dddddd;
+}
+
+/* Subtítulo “Core Skills” */
+.text-container.second h6 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+/* Contenedor de cada tarjeta de skill */
+.skill-card {
+  background-color: rgba(255, 255, 255, 0.1); /* Blanco con 10% de opacidad */
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  height: 100%;
+  align-items: center;
+}
+
+/* Hover: resalta la tarjeta y la eleva ligeramente */
+.skill-card:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-3px);
+}
+
+/* Iconos (FontAwesome) */
+.skill-icon {
+  color: #09f;       /* Azul neón */
+  margin-right: 0.75rem;
+}
+
+/* Etiqueta de texto de la skill */
+.skill-label {
+  color: #ffffff;    /* Blanco */
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+/* Asegurar separación en móviles */
+.mb-3 {
+  margin-bottom: 1rem !important;
+}
+
+/* Forzar que las columnas ocupen altura completa (align-items-stretch) */
+.text-container.second {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.text-container.first {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
