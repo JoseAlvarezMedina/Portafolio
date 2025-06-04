@@ -1283,66 +1283,30 @@ a:hover.back-to-top {
 /* Cambios al nuevo css /*
 /* ──────────────── HEADER (HERO) ──────────────── */
 
-/* 1. Hacienda que el header ocupe el 80% del alto de pantalla */
 .header-hero {
-  height: 100vh; /* Antes era 80vh, ahora cubre toda la ventana */
-  background: url("../images/herobackground.jpg") no-repeat center center;
-  background-size: cover;
   position: relative;
-  display: flex;
-  align-items: center;
-  /* Agregamos un padding-top manual igual a la altura de la navbar (~80px)
-     para que el contenido (título, botones) no quede “detrás” de la barra. */
-  padding-top: 80px;
+  background: url('images/herobackground.jpg') no-repeat center center/cover;
+  height: 75vh;
+  min-height: 500px;
+  color: #fff;
+  overflow: hidden;
 }
-
-
-/* 2. Capa semitransparente sobre el fondo para contraste */
 .header-hero .overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0,0,0,0.6);
   z-index: 1;
 }
-
-/* 3. Contenedor de texto sobre la capa */
 .header-hero .container {
   position: relative;
   z-index: 2;
 }
-
-/* 4. Título principal */
-.hero-title {
-  font-size: 2.5rem;             /* Ajusta según prefieras */
-  font-weight: 700;
-  color: #ffffff;
-  line-height: 1.2;
-  margin-bottom: 0.5rem;
-}
-
-/* Hacer que el texto se escale en pantallas pequeñas */
-@media (max-width: 768px) {
-  .hero-title {
-    font-size: 2rem;
-  }
-}
-
-.hero-subtitle {
-  font-size: 1.1rem;
-  color: #cccccc;
-  margin-bottom: 1.5rem;
-  white-space: nowrap; /* Evita que la línea salte si la frase es más larga */
-}
-
-/* 6. Botones CTA */
-.hero-buttons .btn {
-  min-width: 150px;
-  padding: 0.75rem 1.25rem;
-  font-size: 1rem;
-}
+.hero-title { font-size: 2.5rem; font-weight: 700; margin-bottom: 1rem; }
+.hero-subtitle { font-size: 1.5rem; margin-bottom: 2rem; }
+.hero-buttons .btn { padding: 0.75rem 1.5rem; font-size: 1.125rem; }
 
 /* 7. Asegurar que haya espacio entre botones */
 .hero-buttons .btn + .btn {
@@ -1352,52 +1316,48 @@ a:hover.back-to-top {
 /* ───────────── SUBIR MENÚ. CAMBIO DE FONDO AL SCROLL ───────────── */
 
 /* ──────────────── NAVBAR TRANSPARENTE ──────────────── */
-
-/* 1. Navbar en estado “inicial” (totalmente transparente) */
+/*--------------------------------------------
+  1) Navbar transparente al inicio y con fondo al hacer scroll
+---------------------------------------------*/
 .navbar-custom {
-  position: fixed;              /* La fija arriba */
+  position: fixed;       /* Fija la navbar arriba */
   top: 0;
   left: 0;
   width: 100%;
-  background-color: transparent !important; 
+  background-color: transparent !important; /* Transparente inicialmente */
   transition: background-color 0.3s ease, padding 0.3s ease;
-  padding: 0.3rem 0;            /* Menos padding vertical (antes 1rem) */
-  z-index: 9999;
+  padding: 1rem 0;       /* Padding “alto” al inicio */
+  z-index: 9999;         /* Por encima de todo */
 }
 
-/* 2. Al hacer scroll, cambiamos a fondo semisólido y también más compacta */
+/* Cuando hay scroll, cambiamos la clase a .scrolled (scripts.js lo agrega) */
 .navbar-custom.scrolled {
   background-color: rgba(0, 0, 0, 0.85) !important;
-  padding: 0.2rem 0;            /* Aún menos padding al scrollear */
+  padding: 0.5rem 0;    /* Padding más chico al pegarse arriba */
 }
 
-/* 3. Logo más pequeño para que no agrande la barra */
 .navbar-brand img {
-  max-height: 50px;             /* Antes tenías 120px; ahora 50px */
+  max-height: 60px;   /* Ajusta según tu logo */
   width: auto;
-  display: block;
 }
 
-/* 4. Enlaces del menú (sin cambios en color, solo centran verticalmente) */
+/* Links de la navbar */
 .navbar-custom .nav-link {
-  color: #ffffff;
+  color: #ffffff;     /* Blanco cuando esté sobre la imagen */
   font-weight: 500;
   margin-left: 1rem;
   transition: color 0.2s ease;
 }
 
-/* Hover / activo */
 .navbar-custom .nav-link:hover,
 .navbar-custom .nav-link:focus {
-  color: #09f;
+  color: #09f;        /* Azul neón en hover */
   text-decoration: none;
 }
 
-/* 5. Íconos sociales */
 .navbar-custom .social-icons a {
   font-size: 1.1rem;
   color: #ffffff;
-  margin-left: 0.75rem; /* Un poco de espacio entre íconos */
   transition: color 0.2s ease;
 }
 
@@ -1405,11 +1365,116 @@ a:hover.back-to-top {
   color: #09f;
 }
 
-/* 6. Quitar padding-top del body (solo si ya lo habías puesto) */
+/*--------------------------------------------
+  2) Header Hero con imagen de fondo a pantalla completa
+---------------------------------------------*/
+.header-hero {
+  position: relative;
+  background: url('../images/herobackground.jpg') no-repeat center center / cover;
+  height: 100vh;            /* Ocupa toda la altura de la ventana */
+  min-height: 500px;        /* Mínimo 500px si la pantalla es pequeña */
+  color: #fff;              /* Texto blanco */
+  overflow: hidden;
+}
+
+/* Capa semitransparente */
+.header-hero .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4); /* Opacidad un poco más baja para ver la imagen */
+  z-index: 1;
+}
+
+/* Aseguramos que el contenido esté por encima de la overlay */
+.header-hero .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Texto del Hero */
+.hero-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/* Botones en el Hero */
+.hero-buttons .btn {
+  padding: 0.75rem 1.5rem;
+  font-size: 1.125rem;
+}
+
+/*--------------------------------------------
+  3) About Section (oscuro)
+---------------------------------------------*/
+#about {
+  background-color: #1f2630;  /* Gris muy oscuro */
+  color: #e0e0e0;             /* Gris claro para el texto */
+}
+
+#about h2 {
+  color: #ffffff;             /* Título en blanco */
+}
+
+#about .highlight {
+  color: #09f;               /* Subrayado “highlight” en azul */
+  font-weight: 600;
+}
+
+#about .about-text {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/*--------------------------------------------
+  4) Core Skills Section (blanco)
+---------------------------------------------*/
+#core-skills {
+  background-color: #ffffff;  /* Fondo blanco */
+}
+
+.skill-card {
+  border-radius: 8px;
+  background-color: #f5f5f5;  /* Tarjeta gris clarito */
+  transition: background-color 0.3s ease;
+}
+
+.skill-card:hover {
+  background-color: #e0e0e0;
+}
+
+.skill-icon {
+  color: #08f;               /* Icono en azul vibrante */
+}
+
+.skill-label {
+  display: block;
+  margin-top: 0.5rem;
+  font-weight: 600;
+  color: #333333;
+}
+
+/*--------------------------------------------
+  5) Ajustes generales de padding/márgenes
+---------------------------------------------*/
 body {
   margin: 0;
-  padding-top: 0;  /* Si habías agregado padding para “bajar” el contenido, quítalo */
+  font-family: 'Open Sans', sans-serif;
 }
+
+h1, h2, h4, h5 {
+  font-family: 'Poppins', sans-serif;
+}
+
+
 
 
 /* ===== Estilos para Core Skills (tarjetas con iconos) ===== */
@@ -1497,4 +1562,191 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+/* ------------------------------
+   ABOUT SECTION (FONDO OSCURO)
+   ------------------------------ */
+#about {
+  background-color: #1a1f27; /* Gris muy oscuro */
+  color: #f5f5f5;            /* Texto casi blanco */
+}
+
+#about h2 {
+  font-size: 2rem;    /* Título más grande */
+  font-weight: 700;
+  color: #ffffff;
+}
+
+#about .about-text {
+  font-size: 1.125rem;    /* 18px approx */
+  line-height: 1.7;
+  color: #e0e0e0;         /* Gris claro para los párrafos */
+  margin-bottom: 1rem;
+}
+
+/* Resaltar palabras clave */
+#about .highlight {
+  background-color: #ffd54f; /* Amarillo suave */
+  color: #1a1f27;            /* Mismo gris oscuro de fondo para contraste */
+  padding: 0.15rem 0.3rem;
+  border-radius: 0.2rem;
+  font-weight: 600;
+}
+
+/* Imagen de Jose: bordes y sombra */
+#about img {
+  max-width: 100%;
+  height: auto;
+  border: 3px solid #2a2f35; /* borde ligeramente más claro que el fondo */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  border-radius: 0.5rem;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 992px) {
+  #about .col-lg-5,
+  #about .col-lg-7 {
+    text-align: center;
+  }
+  #about .col-lg-7 {
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  #about h2 {
+    font-size: 1.75rem;
+  }
+  #about .about-text {
+    font-size: 1rem; 
+  }
+  #about .highlight {
+    font-size: 0.95rem;
+    padding: 0.1rem 0.2rem;
+  }
+}
+
+
+/* ================================
+   CORE SKILLS – ESTILOS DEFINITIVOS
+   ================================ */
+
+/* Aseguramos que la sección tenga algo de padding‐top para la navbar fija */
+#core-skills {
+  padding-top: 60px;   /* Altura de la navbar */
+  background-color: #ffffff; /* Fondo blanco */
+}
+
+/* Título “Core Skills” centrado */
+#core-skills h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #333333;
+}
+
+/* Contenedor de cada tarjeta */
+.skill-card {
+  border-radius: 8px;
+  background-color: #f8f9fa; /* Gris clarito de fondo */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  padding: 1.5rem 0.5rem;    /* Espacio interno */
+  min-height: 150px;         /* Alto mínimo para que todas sean uniformes */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Hover sobre la tarjeta: fondo ligeramente más oscuro y leve elevación */
+.skill-card:hover {
+  background-color: #e9ecef; /* Un gris un poco más oscuro */
+  transform: translateY(-4px);
+}
+
+/* Icono dentro de la tarjeta */
+.skill-icon {
+  color: #037bfe;  /* Azul vivo por defecto */
+  transition: color 0.3s ease;
+}
+
+/* Al pasar el cursor, el icono se oscurece un poco */
+.skill-card:hover .skill-icon {
+  color: #0056b3;  /* Azul más oscuro en hover */
+}
+
+/* Etiqueta de texto debajo del icono */
+.skill-label {
+  display: block;
+  margin-top: 0.75rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #343a40;  /* Gris muy oscuro / casi negro */
+  text-align: center;
+  transition: color 0.3s ease;
+}
+
+/* Al hacer hover, la etiqueta también cambia ligeramente */
+.skill-card:hover .skill-label {
+  color: #36556d;  /* Gris más negro en el hover */
+}
+
+/* Ajuste responsivo: en pantallas muy pequeñas, reducir icono un poco */
+@media (max-width: 576px) {
+  .skill-icon {
+    font-size: 2.5rem;
+  }
+  .skill-label {
+    font-size: 1rem;
+  }
+}
+
+/* ----------------------------------------------------
+   Ajustes generales de contenedor y espaciados
+   ---------------------------------------------------- */
+/* Nos aseguramos de que no haya padding o margin extra que desordene */
+.basic-1,
+.basic-2,
+.basic-3,
+.basic-4 {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+/* Si usas bg-gray en algunas secciones, define un gris claro suave */
+.bg-gray {
+  background-color: #f7f9fb;
+}
+
+
+/* ----------------------------------------------------
+   Media Queries para pantallas pequeñas
+   ---------------------------------------------------- */
+@media (max-width: 992px) {
+  #about .col-lg-5,
+  #about .col-lg-7 {
+    text-align: center;
+  }
+  #about .col-lg-7 {
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+  .hero-subtitle {
+    font-size: 1.125rem;
+  }
+  #about .about-text {
+    font-size: 1rem;
+  }
+  .skill-icon {
+    font-size: 2.5rem; /* Reducir un poco en móviles */
+  }
+  .skill-label {
+    font-size: 0.9rem;
+  }
 }
