@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Recomendador Visual de Moda: Sistema basado en visión por computadora que sugiere productos similares utilizando EfficientNetB1." />
+  <meta name="author" content="José Álvarez" />
+
+  <!-- OG Meta Tags -->
+  <meta property="og:site_name" content="FashionRecommendation_CV" />
+  <meta property="og:site" content="https://tu-portfolio.com" />
+  <meta property="og:title" content="Recomendador Visual de Moda – Proyecto CV" />
+  <meta property="og:description" content="Sistema de recomendación de productos de moda basado en visión por computadora. Extrae características visuales con EfficientNetB1 y sugiere ítems similares." />
+  <meta property="og:image" content="images/fashion-reco-share.jpg" />
+  <meta property="og:url" content="https://tu-portfolio.com/project-fashion.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Título de la página -->
+  <title>Recomendador Visual de Moda – Detalles del Proyecto</title>
+
+  <!-- Cargar fuentes y CSS de Bootstrap / FontAwesome / tu styles.css -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@600&display=swap"
+    rel="stylesheet"
+  />
+  <link href="css/bootstrap.css" rel="stylesheet" />
+  <link href="css/fontawesome-all.css" rel="stylesheet" />
+  <link href="css/styles.css" rel="stylesheet" />
+
+  <!-- CSS adicional puntual para esta página -->
+  <style>
+    /* =============================
+       CTA BUTTONS Y OTRAS CLASES
+       ============================= */
+    .cta-section {
+      background-color: #f7f9fb;
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+    }
+    .btn-rect {
+      width: 220px;
+      height: 60px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border-radius: 0.5rem;
+    }
+    .btn-outline-primary.text-primary {
+      color: #0069d9;
+    }
+    .btn-outline-primary.text-primary:hover {
+      color: #0056b3;
+    }
+    /* Para asegurar que el Hero cubra toda la pantalla y deje transparente la navbar */
+    .header-hero {
+      position: relative;
+      background: url('images/fashion-hero-background.jpg') no-repeat center center / cover;
+      height: 100vh;
+      min-height: 500px;
+      color: #fff;
+      overflow: hidden;
+    }
+    .header-hero .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.4);
+      z-index: 1;
+    }
+    .header-hero .container {
+      position: relative;
+      z-index: 2;
+    }
+    .hero-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 600;
+      color: #ffffff;
+    }
+    .hero-subtitle {
+      margin-top: 1rem;
+      font-size: 1.25rem;
+      color: #e0e0e0;
+    }
+  </style>
+
+  <!-- Favicon -->
+  <link rel="icon" href="images/favicon.png" />
+
+  <!-- Funciones JavaScript para abrir Demo y Código -->
+  <script>
+    function openDemo() {
+      const demoURL = "https://demo-tu-proyecto.com";
+      window.open(demoURL, "_blank");
+    }
+    function openCode() {
+      const repoURL = "https://github.com/JoseAlvarezMedina/FashionRecommendation_ComputerVision";
+      window.open(repoURL, "_blank");
+    }
+  </script>
+</head>
+
+<body data-spy="scroll" data-target=".navbar-custom">
+  <!-- =====================
+       NAVBAR (idéntica a index.html)
+       ===================== -->
+  <nav class="navbar navbar-expand-lg fixed-top navbar-dark navbar-custom">
+    <div class="container">
+      <!-- Logo principal (en este caso, logo del proyecto fashion) -->
+      <a class="navbar-brand logo-image" href="index.html">
+        <img src="images/logonavbar2.png" alt="Logo de Jose Alvarez" />
+      </a>
+      <!-- Botón hamburguesa para dispositivos móviles -->
+      <button
+        class="navbar-toggler p-0 border-0"
+        type="button"
+        data-toggle="offcanvas"
+        aria-controls="navbarResponsive"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="navbar-collapse offcanvas-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link page-scroll" href="index.html#header">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link page-scroll" href="index.html#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link page-scroll" href="index.html#services">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="project.html">Proyecto 1</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="project2.html">Proyecto 2</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link page-scroll" href="index.html#contact">Contact</a>
+          </li>
+        </ul>
+        <span class="nav-item social-icons">
+          <span class="fa-stack">
+            <a href="https://facebook.com/tu-perfil" target="_blank">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fab fa-facebook-f fa-stack-1x"></i>
+            </a>
+          </span>
+          <span class="fa-stack">
+            <a href="https://twitter.com/tu-perfil" target="_blank">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fab fa-twitter fa-stack-1x"></i>
+            </a>
+          </span>
+        </span>
+      </div>
+    </div>
+  </nav>
+  <!-- end of navbar -->
+
+  <!-- =====================
+       HERO SECTION (FASHION PROJECT)
+       ===================== -->
+  <header class="header-hero">
+    <div class="overlay"></div>
+    <div class="container h-100">
+      <div class="row h-100 align-items-center">
+        <div class="col-lg-7">
+          <h1 class="hero-title">Recomendador Visual de Moda</h1>
+          <p class="hero-subtitle">
+            Proyecto de visión por computadora que sugiere productos similares en e-commerce
+          </p>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- end of header -->
+
+  <!-- =====================
+       CTA – BOTONES “Ver Demo” y “Ver Código”
+       ===================== -->
+  <div class="cta-section">
+    <div class="container text-center">
+      <div class="d-flex justify-content-center">
+        <!-- Botón “Ver Demo” -->
+        <button
+          class="btn btn-primary btn-rect mr-4"
+          onclick="openDemo()"
+          title="Ver Demo del Sistema"
+        >
+          <i class="fas fa-desktop mb-2"></i><br />
+          Ver Demo
+        </button>
+        <!-- Botón “Ver Código” -->
+        <button
+          class="btn btn-outline-primary btn-rect text-primary"
+          onclick="openCode()"
+          title="Ver Código en GitHub"
+        >
+          <i class="fab fa-github mb-2"></i><br />
+          Ver Código
+        </button>
+      </div>
+    </div>
+  </div>
+  <!-- end of CTA buttons -->
+
+  <!-- =====================
+       PROJECT OVERVIEW
+       ===================== -->
+  <div class="ex-basic-1 pt-5 pb-5">
+    <div class="container">
+      <div class="row">
+        <!-- Imagen del proyecto -->
+        <div class="col-lg-5 mb-4">
+          <img
+            class="img-fluid rounded shadow-sm"
+            src="images/fashion-reco.png"
+            alt="Recomendador Visual de Moda"
+          />
+        </div>
+        <!-- end of col -->
+
+        <!-- Descripción del proyecto -->
+        <div class="col-lg-7">
+          <h2 class="mb-3">¿Qué es este Proyecto?</h2>
+          <p>
+            Este sistema implementa un <strong>recomendador de imágenes</strong> para productos de moda, utilizando redes neuronales convolucionales preentrenadas (EfficientNetB1) para identificar similitudes visuales. A partir de un conjunto de fotografías de prendas, bolsos o calzado, el modelo extrae vectores de características y recomienda ítems visualmente parecidos.
+          </p>
+          <ul class="list-unstyled li-space-lg mb-4">
+            <li class="media mb-2">
+              <i class="fas fa-check-circle fa-lg text-primary mr-3"></i>
+              <div class="media-body">
+                <strong>Extracción de Características:</strong> Utilizamos EfficientNetB1 preentrenada en ImageNet para generar embeddings de cada imagen.
+              </div>
+            </li>
+            <li class="media mb-2">
+              <i class="fas fa-check-circle fa-lg text-primary mr-3"></i>
+              <div class="media-body">
+                <strong>Comparación en Espacio de Embeddings:</strong> Calculamos distancias euclidianas (o coseno) entre vectores para encontrar similitudes.
+              </div>
+            </li>
+            <li class="media mb-2">
+              <i class="fas fa-check-circle fa-lg text-primary mr-3"></i>
+              <div class="media-body">
+                <strong>Búsqueda de Vecinos Más Cercanos:</strong> Con scikit-learn, indexamos todos los embeddings y recuperamos las imágenes más parecidas.
+              </div>
+            </li>
+            <li class="media mb-2">
+              <i class="fas fa-check-circle fa-lg text-primary mr-3"></i>
+              <div class="media-body">
+                <strong>Visualización de Resultados:</strong> Se muestran, junto a la imagen de consulta, las 4 recomendaciones más relevantes en orden de similitud.
+              </div>
+            </li>
+          </ul>
+          <p>
+            Este tipo de sistema es ideal para e-commerce y búsqueda visual, ya que mejora la experiencia de usuario, aumenta la permanencia en la web y eleva la tasa de conversión al sugerir productos similares automáticamente.
+          </p>
+        </div>
+        <!-- end of col -->
+      </div>
+      <!-- end of row -->
+    </div>
+    <!-- end of container -->
+  </div>
+  <!-- end of project overview -->
+
+  <!-- =====================
+       KEY FEATURES CARDS
+       ===================== -->
+  <div class="ex-cards-1 pt-3 pb-3 bg-white">
+    <div class="container">
+      <div class="row">
+        <!-- Card 1 -->
+        <div class="col-md-4 mb-4">
+          <div class="card h-100 text-center shadow-sm">
+            <div class="card-body">
+              <span class="fa-stack mb-3">
+                <span class="fas fa-circle fa-stack-2x text-primary"></span>
+                <span class="fa-stack-1x fa-inverse"><i class="fas fa-cogs"></i></span>
+              </span>
+              <h5 class="card-title">Arquitectura Convolucional</h5>
+              <p class="card-text">
+                EfficientNetB1 extrae representaciones visuales robustas de cada imagen para capturar color, forma y texturas.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="col-md-4 mb-4">
+          <div class="card h-100 text-center shadow-sm">
+            <div class="card-body">
+              <span class="fa-stack mb-3">
+                <span class="fas fa-circle fa-stack-2x text-success"></span>
+                <span class="fa-stack-1x fa-inverse"><i class="fas fa-search"></i></span>
+              </span>
+              <h5 class="card-title">Búsqueda de Similitud</h5>
+              <p class="card-text">
+                Scikit-learn indexa embeddings y permite consultar los vecinos más cercanos con métricas de distancia.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="col-md-4 mb-4">
+          <div class="card h-100 text-center shadow-sm">
+            <div class="card-body">
+              <span class="fa-stack mb-3">
+                <span class="fas fa-circle fa-stack-2x text-warning"></span>
+                <span class="fa-stack-1x fa-inverse"><i class="fas fa-image"></i></span>
+              </span>
+              <h5 class="card-title">Visualización Intuitiva</h5>
+              <p class="card-text">
+                Matplotlib y OpenCV muestran, de manera clara, la imagen de consulta y sus recomendaciones más parecidas.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end of row -->
+    </div>
+    <!-- end of container -->
+  </div>
+  <!-- end of key features cards -->
+
+  <!-- =====================
+       DETAILED DESCRIPTION
+       ===================== -->
+  <div class="ex-basic-1 pt-3 pb-5 bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-10 offset-xl-1">
+          <h2 class="mb-3">¿Cómo Funciona?</h2>
+          <p class="mb-4">El flujo de trabajo se compone de los siguientes pasos principales:</p>
+          <ol class="mb-4">
+            <li>
+              <strong>1. Preparación del Dataset:</strong>
+              <ul>
+                <li>Reunir un conjunto de imágenes de productos en la carpeta <code>data/images/</code>.</li>
+                <li>Organizar las imágenes (opcionalmente por categorías) y crear un listado o DataFrame con sus rutas.</li>
+              </ul>
+            </li>
+            <li>
+              <strong>2. Preprocesamiento de Imágenes:</strong>
+              <ul>
+                <li>Leer cada imagen con OpenCV o Keras (<code>load_img</code>), redimensionar a <code>224×224</code> píxeles.</li>
+                <li>Convertir a arreglo NumPy y aplicar <code>preprocess_input</code> específico de EfficientNetB1.</li>
+              </ul>
+            </li>
+            <li>
+              <strong>3. Extracción de Embeddings:</strong>
+              <ul>
+                <li>Cargar EfficientNetB1 preentrenada en ImageNet (<code>include_top=False</code>, <code>pooling='avg'</code>).</li>
+                <li>Ejecutar <code>model.predict(batch_images)</code> para obtener vectores de características de dimensión 1280.</li>
+                <li>Normalizar cada embedding (división por norma L2) para estabilidad en comparaciones.</li>
+              </ul>
+            </li>
+            <li>
+              <strong>4. Construcción del Índice de Vecinos:</strong>
+              <ul>
+                <li>Con <code>NearestNeighbors(n_neighbors=6, metric='euclidean')</code> de scikit-learn, entrenar el índice sobre todos los embeddings.</li>
+                <li>Almacenar distancias e índices de los vecinos para cada imagen.</li>
+              </ul>
+            </li>
+            <li>
+              <strong>5. Consulta y Recomendación:</strong>
+              <ul>
+                <li>Seleccionar una imagen de consulta (por índice) y llamar a <code>kneighbors</code> para obtener las 5 imágenes más cercanas.</li>
+                <li>El índice 0 corresponde a la misma imagen (distancia 0), por lo que se muestran los vecinos del 1 al 4 como recomendaciones.</li>
+              </ul>
+            </li>
+            <li>
+              <strong>6. Visualización de Resultados:</strong>
+              <ul>
+                <li>Con Matplotlib, dibujar la imagen de consulta y, al lado, las cuatro imágenes recomendadas.</li>
+                <li>Etiquetar cada miniatura con su distancia de similitud (opcional) para entender qué tan cerca están en el espacio de características.</li>
+              </ul>
+            </li>
+          </ol>
+          <div class="text-box mb-4 p-4 bg-white shadow-sm">
+            <h3 class="h5 mb-2">Tecnologías Clave</h3>
+            <ul class="list-unstyled li-space-lg">
+              <li class="media mb-2">
+                <i class="fas fa-check-circle text-primary mr-2"></i>
+                <div class="media-body">Python 3.x como lenguaje principal.</div>
+              </li>
+              <li class="media mb-2">
+                <i class="fas fa-check-circle text-primary mr-2"></i>
+                <div class="media-body">TensorFlow y Keras para cargar EfficientNetB1 preentrenada.</div>
+              </li>
+              <li class="media mb-2">
+                <i class="fas fa-check-circle text-primary mr-2"></i>
+                <div class="media-body">OpenCV para operaciones de lectura y preprocesamiento de imágenes.</div>
+              </li>
+              <li class="media mb-2">
+                <i class="fas fa-check-circle text-primary mr-2"></i>
+                <div class="media-body">Scikit-learn para indexar embeddings y buscar vecinos más cercanos.</div>
+              </li>
+              <li class="media mb-2">
+                <i class="fas fa-check-circle text-primary mr-2"></i>
+                <div class="media-body">Matplotlib y Pandas para visualizar resultados y manejar rutas/etiquetas.</div>
+              </li>
+            </ul>
+          </div>
+          <!-- end of text-box -->
+          <p class="mb-5">
+            Este flujo permite generar recomendaciones visuales de forma automática, sin depender de calificaciones de usuarios, lo que lo hace perfecto para catálogos de e-commerce con miles de productos.
+          </p>
+          <a class="btn-solid-reg mb-5" href="index.html#contact">Contáctame para más Info</a>
+        </div>
+        <!-- end of col -->
+      </div>
+      <!-- end of row -->
+    </div>
+    <!-- end of container -->
+  </div>
+  <!-- end of detailed description -->
+
+  <!-- =====================
+       FOOTER (idéntico al resto)
+       ===================== -->
+  <div class="footer bg-gray">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="social-container">
+            <span class="fa-stack">
+              <a href="#your-link">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-facebook-f fa-stack-1x"></i>
+              </a>
+            </span>
+            <span class="fa-stack">
+              <a href="#your-link">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-twitter fa-stack-1x"></i>
+              </a>
+            </span>
+            <span class="fa-stack">
+              <a href="#your-link">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-pinterest-p fa-stack-1x"></i>
+              </a>
+            </span>
+            <span class="fa-stack">
+              <a href="#your-link">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-instagram fa-stack-1x"></i>
+              </a>
+            </span>
+            <span class="fa-stack">
+              <a href="#your-link">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-youtube fa-stack-1x"></i>
+              </a>
+            </span>
+          </div>
+          <!-- end of social-container -->
+        </div>
+        <!-- end of col -->
+      </div>
+      <!-- end of row -->
+    </div>
+    <!-- end of container -->
+  </div>
+  <!-- end of footer -->
+
+  <!-- =====================
+       COPYRIGHT (idéntico al resto)
+       ===================== -->
+  <div class="copyright bg-gray">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <p class="p-small">
+            Copyright © <a class="no-line" href="https://tu-portfolio.com">José Álvarez</a>
+          </p>
+        </div>
+        <!-- end of col -->
+      </div>
+      <!-- end of row -->
+    </div>
+    <!-- end of container -->
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <p class="p-small">
+            Distributed By <a class="no-line" href="https://themewagon.com/">Themewagon</a>
+          </p>
+        </div>
+        <!-- end of col -->
+      </div>
+      <!-- end of row -->
+    </div>
+    <!-- end of container -->
+  </div>
+  <!-- end of copyright -->
+
+  <!-- =====================
+       SCRIPTs (idénticos al resto)
+       ===================== -->
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.easing.min.js"></script>
+  <script src="js/scripts.js"></script>
+</body>
+</html>
