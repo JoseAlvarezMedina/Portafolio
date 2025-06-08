@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Crime in Context: Statistical analysis of violent crime in the U.S. (1975–2015)" />
+  <meta name="author" content="José Álvarez" />
+
+  <!-- OG Meta Tags -->
+  <meta property="og:site_name" content="Crime in Context Analysis" />
+  <meta property="og:site" content="https://tu-portfolio.com" />
+  <meta property="og:title" content="Crime in Context – Statistical Data Analysis" />
+  <meta property="og:description" content="Multivariate analysis and clustering of homicide, assault, robbery and rape data using R, PCA, LDA and MANOVA." />
+  <meta property="og:image" content="images/crime-context-thumb.jpg" />
+  <meta property="og:url" content="https://tu-portfolio.com/crime_project.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <title>Crime in Context – Statistical Data Analysis</title>
+
+  <!-- Fonts & CSS -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap"
+    rel="stylesheet"
+  />
+  <link href="css/bootstrap.css" rel="stylesheet" />
+  <link href="css/fontawesome-all.css" rel="stylesheet" />
+  <link href="css/styles.css" rel="stylesheet" />
+
+  <style>
+    /* CTA buttons */
+    .cta-section {
+      background-color: #f7f9fb;
+      padding: 3rem 0;
+    }
+    .btn-rect {
+      width: 200px;
+      height: 60px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border-radius: 0.5rem;
+    }
+    .btn-outline-primary.text-primary {
+      color: #0069d9;
+    }
+    .btn-outline-primary.text-primary:hover {
+      color: #0056b3;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- HEADER / HERO -->
+  <header class="header-hero">
+    <div class="overlay"></div>
+    <div class="container h-100">
+      <div class="row h-100 align-items-center">
+        <div class="col-lg-7">
+          <h1 class="hero-title">Crime in Context Analysis</h1>
+          <p class="hero-subtitle">Statistical analysis of violent crime in the U.S. (1975–2015)</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- CTA: Download Report & View Code -->
+  <div class="cta-section text-center">
+    <button
+      class="btn btn-primary btn-rect mr-4"
+      onclick="window.open('AED.pdf','_blank')"
+      title="Download Report PDF"
+    >
+      <i class="fas fa-file-pdf mb-2"></i><br />
+      Download Report
+    </button>
+    <button
+      class="btn btn-outline-primary btn-rect text-primary"
+      onclick="window.open('proyecto_final.Rmd','_blank')"
+      title="View R Code"
+    >
+      <i class="fab fa-r-project mb-2"></i><br />
+      View R Code
+    </button>
+  </div>
+
+  <!-- PROJECT OVERVIEW -->
+  <section class="ex-basic-1 pt-5 pb-5">
+    <div class="container">
+      <div class="row">
+        <!-- Image -->
+        <div class="col-lg-5 mb-4">
+          <img
+            src="images/crime-context-demo.jpg"
+            alt="Crime Data Visualizations"
+            class="img-fluid rounded shadow-sm"
+          />
+        </div>
+        <!-- Description -->
+        <div class="col-lg-7">
+          <h2 class="mb-3">What is Crime in Context?</h2>
+          <p>
+            Crime in Context is an in-depth study of the four major violent crimes (homicide,
+            rape, assault and robbery) across 68 U.S. jurisdictions from 1975 to 2015. This
+            project combines data cleaning, descriptive analysis and multivariate statistical
+            models to reveal geographic and temporal patterns.
+          </p>
+          <ul class="list-unstyled li-space-lg mb-4">
+            <li class="media mb-2">
+              <i class="fas fa-database fa-lg text-primary mr-3"></i>
+              <div class="media-body">
+                <strong>Data Loading &amp; Preprocessing:</strong>
+                Filtering records, handling missing values and outliers via IQR.
+              </div>
+            </li>
+            <li class="media mb-2">
+              <i class="fas fa-chart-bar fa-lg text-primary mr-3"></i>
+              <div class="media-body">
+                <strong>Exploratory Data Analysis:</strong>
+                Boxplots, correlation matrices and visualizations with <em>ggplot2</em> and <em>factoextra</em>.
+              </div>
+            </li>
+            <li class="media mb-2">
+              <i class="fas fa-project-diagram fa-lg text-primary mr-3"></i>
+              <div class="media-body">
+                <strong>PCA &amp; LDA:</strong>
+                Dimension reduction and classification by region and decade using <code>prcomp()</code> and <code>MASS::lda()</code>.
+              </div>
+            </li>
+            <li class="media mb-2">
+              <i class="fas fa-network-wired fa-lg text-primary mr-3"></i>
+              <div class="media-body">
+                <strong>Hierarchical Clustering:</strong>
+                Grouping jurisdictions with <code>hclust()</code> and <code>cutree()</code>.
+              </div>
+            </li>
+          </ul>
+          <p>
+            Results highlight significant regional and temporal differences (MANOVA), though
+            internal heterogeneity limits classification accuracy (~47%). Clustering suggests
+            two main crime-behavior patterns.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KEY FEATURES CARDS -->
+  <section class="ex-cards-1 pt-3 pb-3 bg-white">
+    <div class="container">
+      <div class="row">
+        <!-- Preprocessing -->
+        <div class="col-md-4 mb-4">
+          <div class="card h-100 text-center shadow-sm">
+            <div class="card-body">
+              <i class="fas fa-sync-alt fa-3x text-primary mb-3"></i>
+              <h5 class="card-title">Preprocessing</h5>
+              <p class="card-text">
+                Normalization, duplicate removal and outlier handling to ensure data quality.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Exploratory Analysis -->
+        <div class="col-md-4 mb-4">
+          <div class="card h-100 text-center shadow-sm">
+            <div class="card-body">
+              <i class="fas fa-chart-pie fa-3x text-success mb-3"></i>
+              <h5 class="card-title">Exploratory Analysis</h5>
+              <p class="card-text">
+                Visual exploration with boxplots and correlation matrices to uncover patterns.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Multivariate Modeling -->
+        <div class="col-md-4 mb-4">
+          <div class="card h-100 text-center shadow-sm">
+            <div class="card-body">
+              <i class="fas fa-project-diagram fa-3x text-warning mb-3"></i>
+              <h5 class="card-title">Multivariate Modeling</h5>
+              <p class="card-text">
+                PCA, LDA and MANOVA for dimension reduction and hypothesis testing.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DETAILED DESCRIPTION -->
+  <section class="ex-basic-1 pt-3 pb-5 bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-10 offset-xl-1">
+          <h2 class="mb-3">Process Details</h2>
+          <ol class="mb-4">
+            <li><strong>Data Loading:</strong> Imported the “Crime in Context 1975–2015” dataset from Kaggle into R.</li>
+            <li><strong>Cleaning &amp; Filtering:</strong> Removed incomplete records, duplicates and IQR-based outliers.</li>
+            <li><strong>EDA:</strong> Generated boxplots by region and crime-type correlation matrices.</li>
+            <li><strong>PCA:</strong> Identified principal components; assault &amp; robbery explained most variance.</li>
+            <li><strong>LDA:</strong> Discriminated by region &amp; decade (accuracy ≈ 47%).</li>
+            <li><strong>MANOVA:</strong> Conducted multivariate mean tests, confirming significant differences.</li>
+            <li><strong>Clustering:</strong> Performed hierarchical clustering, grouping jurisdictions into two main patterns.</li>
+          </ol>
+          <h3>Conclusions</h3>
+          <p>
+            While there are clear regional and temporal differences, internal variation within jurisdictions
+            limits classification accuracy. Incorporating socio-economic variables could improve predictive
+            power and yield deeper insights into crime drivers.
+          </p>
+          <a class="btn-solid-reg mb-5" href="#contact">Get in Touch</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer bg-gray py-3">
+    <div class="container text-center">
+      <p class="p-small">© 2025 José Álvarez</p>
+    </div>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/scripts.js"></script>
+</body>
+</html>

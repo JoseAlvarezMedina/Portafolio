@@ -29,826 +29,375 @@
   <link href="css/fontawesome-all.css" rel="stylesheet" />
   <link href="css/styles.css" rel="stylesheet" />
 
-  <!-- Favicon -->
-  <link rel="icon" href="images/favicon.png" />
+  <!-- Glider.js CSS -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.css"
+  />
+
+  <!-- AOS (Animate On Scroll) CSS -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/aos@2.3.1/dist/aos.css"
+  />
+
+  <style>
+    .highlight {
+      background-color: #ffc107;
+      color: #212529;
+      padding: 0.1em 0.3em;
+      border-radius: 0.2rem;
+      font-weight: 600;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .fade-in-fallback {
+      animation: fadeIn 0.8s ease-out forwards;
+      opacity: 0;
+    }
+    .slide-item {
+      background-color: #fafafa;
+      border-radius: 8px;
+      padding: 1rem;
+      text-align: center;
+    }
+    .slide-image img {
+      width: 80%;
+      height: auto;
+      object-fit: contain;
+      border-radius: 4px;
+      margin: 0 auto;
+      display: block;
+    }
+    .tech-circle {
+      display: inline-flex;
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      background-color: #fff;
+      border: 2px solid #ddd;
+      align-items: center; justify-content: center;
+      margin: 0 6px;
+    }
+    .slide-title {
+      font-size: 1.1rem; font-weight: 600; margin-top: 0.75rem;
+    }
+    .slide-desc {
+      font-size: 0.9rem; color: #666; margin-top: 0.25rem;
+    }
+    .glider-contain { position: relative; width: 100%; }
+    .glider-prev, .glider-next {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      background: transparent; border: none;
+      font-size: 1.5rem; color: #333; z-index: 2; cursor: pointer;
+    }
+    .glider-prev { left: -25px; }
+    .glider-next { right: -25px; }
+    .glider-contain .dots { margin-top: 1rem; text-align: center; }
+    .dots button {
+      background-color: #ccc; border: none;
+      width: 10px; height: 10px; border-radius: 50%;
+      margin: 0 4px; opacity: 0.5; transition: opacity 0.2s;
+    }
+    .dots .glider-dot-active {
+      opacity: 1; background-color: #6f42c1;
+    }
+  </style>
+
+  <link rel="icon" href="images/logoalv.png" />
 </head>
 
 <body data-spy="scroll" data-target=".navbar-custom">
-<!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg fixed-top navbar-dark navbar-custom">
-  <div class="container">
-    <a class="navbar-brand" href="index.html">
-      <img src="images/logonavbar2.png" alt="Logo de Jose Alvarez" />
-    </a>
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-toggle="offcanvas"
-      aria-controls="navbarNav"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="navbar-collapse offcanvas-collapse" id="navbarNav">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item active">
-          <a class="nav-link page-scroll" href="#header">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link page-scroll" href="#about">About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link page-scroll" href="#services">Services</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link page-scroll" href="#projects">Projects</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link page-scroll" href="#contact">Contact</a>
-        </li>
-      </ul>
-      <span class="nav-item social-icons">
-        <a href="https://facebook.com/tu-perfil" class="text-white mx-2">
-          <i class="fab fa-facebook-f"></i>
-        </a>
-        <a href="https://twitter.com/tu-perfil" class="text-white mx-2">
-          <i class="fab fa-twitter"></i>
-        </a>
-      </span>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg fixed-top navbar-dark navbar-custom">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="images/logonavbar2.png" alt="Logo de Jose Alvarez" />
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="offcanvas"
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-collapse offcanvas-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active"><a class="nav-link page-scroll" href="#header">Home</a></li>
+          <li class="nav-item"><a class="nav-link page-scroll" href="#about">About Me</a></li>
+          <li class="nav-item"><a class="nav-link page-scroll" href="#experience">Experience</a></li>
+          <li class="nav-item"><a class="nav-link page-scroll" href="#education">Education</a></li>
+          <li class="nav-item"><a class="nav-link page-scroll" href="#projects">Portfolio</a></li>
+        </ul>
+        <span class="nav-item social-icons">
+          <a href="https://www.linkedin.com/in/jose-alvarez-372263221/" target="_blank" class="text-white mx-2">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="https://github.com/JoseAlvarezMedina" target="_blank" class="text-white mx-2">
+            <i class="fab fa-github"></i>
+          </a>
+        </span>
+      </div>
     </div>
-  </div>
-</nav>
-<!-- FIN NAVBAR -->
+  </nav>
+  <!-- FIN NAVBAR -->
 
-<!-- HEADER (HERO SECTION) -->
-<header id="header" class="header-hero">
-  <div class="overlay"></div>
-  <div class="container h-100">
-    <div class="row h-100 align-items-center">
-      <div class="col-lg-7 text-white">
-        <h1 class="hero-title">
-          Driving innovation with AI &amp; data science expertise
-        </h1>
-        <p class="hero-subtitle">
-          <span id="typed-text"></span>
-        </p>
-        <div class="hero-buttons">
-          <a class="btn btn-primary btn-lg mr-3" href="#projects" role="button">
-            Portfolio
-          </a>
-          <a
-            class="btn btn-outline-light btn-lg"
-            href="files/JoseAlvarez_CV.pdf"
-            download="JoseAlvarez_CV.pdf"
-            role="button"
-          >
-            <i class="fas fa-download"></i> Download CV
-          </a>
+  <!-- HERO -->
+  <header id="header" class="header-hero">
+    <div class="overlay"></div>
+    <div class="container h-100">
+      <div class="row h-100 align-items-center">
+        <div class="col-lg-7 text-white">
+          <h1 class="hero-title">Driving innovation with AI &amp; data science expertise</h1>
+          <p class="hero-subtitle"><span id="typed-text"></span></p>
+          <div class="hero-buttons">
+            <a class="btn btn-primary btn-lg mr-3" href="#projects">Portfolio</a>
+            <a class="btn btn-outline-light btn-lg" href="files/JoseAlvarez_CV.pdf" download>
+              <i class="fas fa-download"></i> Download CV
+            </a>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</header>
-<!-- FIN HEADER -->
+  </header>
 
-
-  <!-- ============================================
-       ABOUT SECTION
-       ============================================ -->
-  <section id="about" class="basic-1 bg-dark text-light py-5">
+  <!-- ABOUT -->
+  <section id="about" class="basic-1 bg-dark text-light py-5" data-aos="fade-up">
     <div class="container">
       <div class="row align-items-center">
-        <!-- Imagen a la izquierda -->
-        <div class="col-lg-5 mb-4 mb-lg-0">
-          <img
-            src="images/fotojose.jpeg"
-            alt="Foto de Jose Alvarez"
-            class="img-fluid rounded shadow-sm"
-          />
+        <div class="col-lg-5 mb-4 mb-lg-0" data-aos="fade-right">
+          <img src="images/fotojose.jpeg" alt="Jose Alvarez" class="img-fluid rounded shadow-sm fade-in-fallback" />
         </div>
-
-        <!-- Texto “About Jose Alvarez” a la derecha -->
-        <div class="col-lg-7">
-          <h2 class="mb-3">About Jose Alvarez</h2>
-          <p class="lead about-text">
-            I’m a <span class="highlight">Mathematics</span> &amp;
-            <span class="highlight">Computer Science</span> professional
-            specializing in <span class="highlight">AI</span> and
-            <span class="highlight">Data Science</span>. As a
-            <span class="highlight">Machine Learning Engineer</span>, I’ve led
-            projects end-to-end—collecting data, training and optimizing
-            models, and deploying solutions. My passions include
-            <span class="highlight">Natural Language Processing</span> and
-            <span class="highlight">Computer Vision</span>, where I build
-            scalable, high-performance systems.
+        <div class="col-lg-7" data-aos="fade-left">
+          <h2 class="mb-3">About Me</h2>
+          <p class="lead mb-3 fade-in-fallback">
+            I’m a <span class="highlight">Mathematics &amp; Computer Science</span> graduate (2020–2025) from Universidad del Rosario with a <span class="highlight">Minor in AI</span> (2024–2025).
           </p>
-          <p class="about-text mb-0">
-            Additionally, I have strong expertise in
-            <span class="highlight">Web Development</span>, creating responsive
-            interfaces with modern frameworks and integrating them with RESTful
-            APIs. My goal is to turn complex datasets into user-friendly
-            applications and actionable insights through clean, maintainable
-            code.
+          <div class="mb-3 fade-in-fallback">
+            <strong>Technical Expertise:</strong>
+            <ul class="ms-3">
+              <li><span class="highlight">Machine Learning &amp; Data Analysis</span>: Python, pandas, scikit-learn, TensorFlow, PyTorch</li>
+              <li><span class="highlight">Web &amp; Front-End</span>: Bootstrap, responsive UI, data visualization</li>
+              <li><span class="highlight">Deployment &amp; Workflow</span>: Git, basic MLOps pipelines, automated testing</li>
+            </ul>
+          </div>
+          <div class="mb-3 fade-in-fallback">
+            <strong>Values:</strong> <span class="highlight">Teamwork</span>, <span class="highlight">Autonomy</span>, <span class="highlight">Communication</span>, <span class="highlight">Continuous Learning</span>
+          </div>
+          <p class="fade-in-fallback">
+            Recently, I built a <span class="highlight">LangChain chatbot</span> to streamline customer support, cutting response times by over 40%.
           </p>
         </div>
       </div>
     </div>
   </section>
-  <!-- FIN ABOUT SECTION -->
 
-
-<!-- =========================
-     CORE SKILLS SECTION
-     ========================= -->
-    <section id="core-skills" class="bg-white py-5">
+  <!-- EXPERIENCE -->
+  <section id="experience" class="basic-2 bg-white py-5" data-aos="fade-up">
     <div class="container">
-        <div class="row justify-content-center mb-4">
-        <div class="col-12 text-center">
-            <h2 class="mb-3">Core Skills</h2>
-        </div>
-        </div>
-        <div class="row justify-content-center">
-        <!-- Machine Learning -->
-        <div class="col-lg-3 col-md-4 col-sm-6 mb-4 text-center">
-            <div class="skill-card p-3">
-            <i class="fas fa-robot fa-3x skill-icon mb-2"></i><br />
-            <span class="skill-label">Machine Learning</span>
+      <h2 class="text-center mb-4">Experience</h2>
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="media align-items-center">
+            <a href="https://www.linkedin.com/company/bymind-col/" target="_blank" class="me-3">
+              <img src="images/logobymind.jpg" alt="Bymind Logo" style="width:50px; height:50px;">
+            </a>
+            <div class="media-body">
+              <h5>Web Developer, Bymind</h5>
+              <p>
+                Started, managed &amp; led 100% custom landing pages &amp; Shopify e-commerce projects.
+                Used <span class="highlight">Bootstrap</span> and contributed heavily to the front-end,
+                working one-on-one with clients to deliver tailored design &amp; functionality.
+              </p>
             </div>
-        </div>
-        <!-- Deep Learning -->
-        <div class="col-lg-3 col-md-4 col-sm-6 mb-4 text-center">
-            <div class="skill-card p-3">
-            <i class="fas fa-brain fa-3x skill-icon mb-2"></i><br />
-            <span class="skill-label">Deep Learning</span>
-            </div>
-        </div>
-        <!-- NLP -->
-        <div class="col-lg-3 col-md-4 col-sm-6 mb-4 text-center">
-            <div class="skill-card p-3">
-            <i class="fas fa-language fa-3x skill-icon mb-2"></i><br />
-            <span class="skill-label">NLP</span>
-            </div>
-        </div>
-        <!-- Computer Vision -->
-        <div class="col-lg-3 col-md-4 col-sm-6 mb-4 text-center">
-            <div class="skill-card p-3">
-            <i class="fas fa-image fa-3x skill-icon mb-2"></i><br />
-            <span class="skill-label">Computer Vision</span>
-            </div>
-        </div>
-        <!-- Applied Math -->
-        <div class="col-lg-3 col-md-4 col-sm-6 mb-4 text-center">
-            <div class="skill-card p-3">
-            <i class="fas fa-square-root-alt fa-3x skill-icon mb-2"></i><br />
-            <span class="skill-label">Applied Math</span>
-            </div>
-        </div>
-        <!-- Statistical Modeling -->
-        <div class="col-lg-3 col-md-4 col-sm-6 mb-4 text-center">
-            <div class="skill-card p-3">
-            <i class="fas fa-chart-line fa-3x skill-icon mb-2"></i><br />
-            <span class="skill-label">Statistical Modeling</span>
-            </div>
-        </div>
-        <!-- Python -->
-        <div class="col-lg-3 col-md-4 col-sm-6 mb-4 text-center">
-            <div class="skill-card p-3">
-            <i class="fab fa-python fa-3x skill-icon mb-2"></i><br />
-            <span class="skill-label">Python</span>
-            </div>
-        </div>
-        <!-- TensorFlow -->
-        <div class="col-lg-3 col-md-4 col-sm-6 mb-4 text-center">
-            <div class="skill-card p-3">
-            <i class="fas fa-cogs fa-3x skill-icon mb-2"></i><br />
-            <span class="skill-label">TensorFlow</span>
-            </div>
-        </div>
-        <!-- PyTorch -->
-        <div class="col-lg-3 col-md-4 col-sm-6 mb-4 text-center">
-            <div class="skill-card p-3">
-            <i class="fas fa-fire fa-3x skill-icon mb-2"></i><br />
-            <span class="skill-label">PyTorch</span>
-            </div>
-        </div>
-        <!-- AWS / Docker -->
-        <div class="col-lg-3 col-md-4 col-sm-6 mb-4 text-center">
-            <div class="skill-card p-3">
-            <i class="fas fa-cloud fa-3x skill-icon mb-2"></i><br />
-            <span class="skill-label">AWS / Docker</span>
-            </div>
-        </div>
-        <!-- Data Analytics -->
-        <div class="col-lg-3 col-md-4 col-sm-6 mb-4 text-center">
-            <div class="skill-card p-3">
-            <i class="fas fa-chart-bar fa-3x skill-icon mb-2"></i><br />
-            <span class="skill-label">Data Analytics</span>
-            </div>
-        </div>
-        <!-- Web Development -->
-        <div class="col-lg-3 col-md-4 col-sm-6 mb-4 text-center">
-            <div class="skill-card p-3">
-            <i class="fas fa-code fa-3x skill-icon mb-2"></i><br />
-            <span class="skill-label">Web Development</span>
-            </div>
-        </div>
-        </div>
-    </div>
-    </section>
-<!-- FIN CORE SKILLS -->
-
-
-
-  <!-- ============================================
-       SERVICES SECTION
-       ============================================ -->
-  <section id="services" class="basic-2 py-5">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <h2 class="h2-heading">Offered Services</h2>
-          <p class="p-heading">
-            Web design and development have been my bread and butter for more than 5 years. During
-            that time I've discovered that I can help startups and companies with the following services:
-          </p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-4">
-          <div class="text-box">
-            <i class="far fa-gem"></i>
-            <h4>DESIGN</h4>
-            <p>
-              Successful online projects start with good design. It establishes a solid foundation for
-              future development and allows for long term growth.
-            </p>
-          </div>
-        </div>
-        <div class="col-lg-4">
-          <div class="text-box">
-            <i class="fas fa-code"></i>
-            <h4>DEVELOPMENT</h4>
-            <p>
-              I can code my own designs or even use the customer's design as base. My focus is to
-              generate clean code that's well structured for reliability.
-            </p>
-          </div>
-        </div>
-        <div class="col-lg-4">
-          <div class="text-box">
-            <i class="fas fa-tv"></i>
-            <h4>BASIC SEO</h4>
-            <p>
-              I can setup your project to use basic SEO principles which will push your project to
-              the first page on search engines and save you ads money.
-            </p>
           </div>
         </div>
       </div>
     </div>
   </section>
-  <!-- FIN SERVICES SECTION -->
 
+  <!-- EDUCATION -->
+  <section id="education" class="py-5" data-aos="fade-up">
+    <div class="container">
+      <h2 class="text-center mb-4">Education</h2>
+      <div class="row">
+        <div class="col-lg-8 offset-lg-2 position-relative">
+          <div class="position-absolute top-0 start-50 translate-middle-x h-100" style="width:4px; background:#ddd;"></div>
 
-  <!-- ============================================
-       DETAILS SECTION
-       ============================================ -->
-  <div class="split">
-    <div class="area-1"></div>
-    <div class="area-2 bg-gray">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12">
-            <div class="text-container">
-              <h2>Why Work With Me</h2>
-              <p>
-                I am a great communicator and love to invest the necessary time to understand the
-                customer's problem very well.
-              </p>
-              <h5>DESIGN TOOLS</h5>
-              <p>
-                My favorite design tools are Photoshop and Illustrator but I can create designs in
-                Figma, Sketch and Adobe XD too.
-              </p>
-              <h5>DEVELOPMENT SKILLS</h5>
-              <p>
-                I am familiar and work on a daily basis with HTML, CSS, JavaScript, Bootstrap and
-                other modern frameworks.
-              </p>
-              <div class="icons-container">
-                <img src="images/details-icon-photoshop.png" alt="Photoshop" />
-                <img src="images/details-icon-illustrator.png" alt="Illustrator" />
-                <img src="images/details-icon-html.png" alt="HTML" />
-                <img src="images/details-icon-css.png" alt="CSS" />
-                <img src="images/details-icon-bootstrap.png" alt="Bootstrap" />
-                <img src="images/details-icon-javascript.png" alt="JavaScript" />
+          <div class="d-flex mb-5 position-relative">
+            <div class="me-3">
+              <img src="images/logour.png" alt="UR Logo" style="width:50px; height:50px;">
+            </div>
+            <div class="flex-grow-1">
+              <h5>B.Sc. in Mathematics &amp; Computer Science</h5>
+              <p class="text-muted mb-1">Universidad del Rosario, 2020–2025</p>
+              <ul class="mb-0">
+                <li>Calculus I–III; Linear Algebra; Differential Equations</li>
+                <li>Probability &amp; Statistics; Optimization; Modeling</li>
+                <li>Data Structures &amp; Algorithms; DBMS</li>
+                <li>Cloud Computing &amp; Distributed Systems</li>
+                <li>Statistical Data Analysis; Software Architecture; Web Dev</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="d-flex mb-5 position-relative">
+            <div class="me-3">
+              <img src="images/logour.png" alt="UR Logo" style="width:50px; height:50px;">
+            </div>
+            <div class="flex-grow-1">
+              <h5>Minor in Artificial Intelligence</h5>
+              <p class="text-muted mb-1">Universidad del Rosario, 2024–2025</p>
+              <ul class="mb-0">
+                <li>Computer Vision &amp; Image Processing</li>
+                <li>Natural Language Processing</li>
+                <li>Reinforcement Learning &amp; ML Fundamentals</li>
+                <li>Deep Learning Architectures &amp; Deployment</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="mt-4">
+            <div class="d-flex mb-3 position-relative">
+              <div class="me-3">
+                <span class="bg-info text-white rounded-circle d-inline-flex align-items-center justify-content-center" style="width:50px; height:50px;">
+                  <i class="fas fa-certificate fa-lg"></i>
+                </span>
+              </div>
+              <div class="flex-grow-1">
+                <h5>Certifications</h5>
               </div>
             </div>
+            <ul class="ms-5 mb-0">
+              <li>LangChain &amp; Chatbot Development – Platzi</li>
+              <li>Digital Marketing – Platzi</li>
+              <li>PostgreSQL – Platzi</li>
+              <li>Machine Learning in Production – DeepLearning.AI</li>
+            </ul>
           </div>
+
         </div>
       </div>
     </div>
-  </div>
-  <!-- FIN DETAILS SECTION -->
-
+  </section>
 
   <!-- ============================================
        PROJECTS SECTION
        ============================================ -->
-  <section id="projects" class="basic-3 py-5">
+  <section id="projects" class="basic-3 py-3" data-aos="fade-up">
     <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <h2 class="h2-heading">Delivered Projects</h2>
-          <p class="p-heading">
-            Some of the most representative projects I've worked on—ranging from basic web design to
-            advanced web development.
-          </p>
+      <h2 class="text-center mb-4">Portfolio</h2>
+
+      <div class="glider-contain">
+        <!-- Navegación de dots encima -->
+        <div class="dots"></div>
+
+        <!-- Flecha izquierda superpuesta -->
+        <button class="glider-prev">&laquo;</button>
+
+        <div class="glider">
+          <!-- Slide 1 -->
+          <div class="slide-item">
+            <a href="project1.html" class="text-decoration-none text-dark">
+              <div class="slide-header">
+                <div class="slide-title">IAgora</div>
+                <div class="slide-desc">AI marketing assistant for SMEs</div>
+                <div class="d-flex justify-content-center">
+                  <span class="tech-circle"><img src="images/logolangchain.png" alt="LangChain"></span>
+                  <span class="tech-circle"><img src="images/logoopenai.png"   alt="OpenAI"></span>
+                  <span class="tech-circle"><img src="images/logostreamlit.png" alt="Streamlit"></span>
+                  <span class="tech-circle"><img src="images/logohugging.png"  alt="Hugging Face"></span>
+                  <span class="tech-circle"><img src="images/logorag.png"      alt="RAG"></span>
+                </div>
+              </div>
+              <div class="slide-image mb-3">
+                <img src="images/project1.png" alt="IAgora" />
+              </div>
+            </a>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="slide-item">
+            <a href="project2.html" class="text-decoration-none text-dark">
+              <div class="slide-header">
+                <div class="slide-title">Vision Analytics</div>
+                <div class="slide-desc">Computer vision pipeline with Python &amp; OpenCV</div>
+                <div class="d-flex justify-content-center">
+                  <span class="tech-circle"><img src="images/logoopencv.png" alt="OpenCV"></span>
+                  <span class="tech-circle"><img src="images/logopython.png" alt="Python"></span>
+                  <span class="tech-circle"><img src="images/logopandas.png" alt="Pandas"></span>
+                  <span class="tech-circle"><img src="images/logomatplotlib.png" alt="Matplotlib"></span>
+                  <span class="tech-circle"><img src="images/logotensor.png" alt="TensorFlow"></span>
+                  <span class="tech-circle"><img src="images/logoscikit.png" alt="Scikit-learn"></span>
+                </div>
+              </div>
+              <div class="slide-image mb-3">
+                <img src="images/project2.png" alt="Vision Analytics" />
+              </div>
+            </a>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="slide-item">
+            <a href="project3.html" class="text-decoration-none text-dark">
+              <div class="slide-header">
+                <div class="slide-title">Crime in Context</div>
+                <div class="slide-desc">Statistical crime analysis (1975–2015)</div>
+                <div class="d-flex justify-content-center">
+                  <span class="tech-circle"><img src="images/logocluster.png" alt="Clustering"></span>
+                  <span class="tech-circle"><img src="images/logodataan.jpg" alt="Data Analysis"></span>
+                  <span class="tech-circle"><img src="images/logokaggle.png" alt="Kaggle"></span>
+                  <span class="tech-circle"><img src="images/logotidy.png" alt="Tidyverse"></span>
+                  <span class="tech-circle"><img src="images/logor.jpg" alt="R"></span>
+                </div>
+              </div>
+              <div class="slide-image mb-3">
+                <img src="images/project3.png" alt="Crime in Context" />
+              </div>
+            </a>
+          </div>
+
+          <!-- Slide 4 -->
+          <div class="slide-item">
+            <a href="project4.html" class="text-decoration-none text-dark">
+              <div class="slide-header">
+                <div class="slide-title">VitaSkin Shopify Store</div>
+                <div class="slide-desc">Premium skincare e-commerce</div>
+                <div class="d-flex justify-content-center">
+                  <span class="tech-circle"><img src="images/logoshopify.png" alt="Shopify"></span>
+                  <span class="tech-circle"><img src="images/logohtml.png"    alt="HTML5"></span>
+                  <span class="tech-circle"><img src="images/logoliquid.png"  alt="Liquid"></span>
+                </div>
+              </div>
+              <div class="slide-image mb-3">
+                <img src="images/project4.png" alt="VitaSkin Shopify Store" />
+              </div>
+            </a>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-12">
-          <!-- Proyecto 1 -->
-          <div class="text-container mb-4">
-            <div class="image-container mb-2">
-              <a href="project.html">
-                <img class="img-fluid" src="images/project1.png" alt="Project 1" />
-              </a>
-            </div>
-            <p>
-              <strong>For:</strong> Jumbotron,
-              <strong>Project:</strong> Web design for corporate websites and landing pages for marketing
-              campaigns
-              <a class="blue" href="project.html">details</a>
-            </p>
-          </div>
-          <!-- Proyecto 2 -->
-          <div class="text-container mb-4">
-            <div class="image-container mb-2">
-              <a href="project2.html">
-                <img class="img-fluid" src="images/project2.png" alt="Project 2" />
-              </a>
-            </div>
-            <p>
-              <strong>For:</strong> Carsrepo,
-              <strong>Project:</strong> Designed and developed a modern platform for purchasing second-hand
-              cars online
-              <a class="blue" href="project.html">details</a>
-            </p>
-          </div>
-          <!-- Proyecto 3 -->
-          <div class="text-container mb-4">
-            <div class="image-container mb-2">
-              <a href="project.html">
-                <img class="img-fluid" src="images/project-3.jpg" alt="Project 3" />
-              </a>
-            </div>
-            <p>
-              <strong>For:</strong> Truevideo,
-              <strong>Project:</strong> Created a custom video editing and upload web app for this awesome
-              team
-              <a class="blue" href="project.html">details</a>
-            </p>
-          </div>
-          <!-- Proyecto 4 -->
-          <div class="text-container mb-4">
-            <div class="image-container mb-2">
-              <a href="project.html">
-                <img class="img-fluid" src="images/project-4.jpg" alt="Project 4" />
-              </a>
-            </div>
-            <p>
-              <strong>For:</strong> Evolosim,
-              <strong>Project:</strong> Complete redesign of their corporate website and platform update for
-              their online shop
-              <a class="blue" href="project.html">details</a>
-            </p>
-          </div>
-        </div>
+
+        <!-- Flecha derecha superpuesta -->
+        <button class="glider-next">&raquo;</button>
       </div>
     </div>
   </section>
-  <!-- FIN PROJECTS SECTION -->
 
-
-  <!-- ============================================
-       WORKS SECTION
-       ============================================ -->
-  <section class="basic-4 py-5">
-    <div class="container">
-      <div class="row">
-        <!-- Work 1 -->
-        <div class="col-lg-4 mb-4">
-          <div class="text-container">
-            <div class="image-container mb-2">
-              <a href="project.html">
-                <img class="img-fluid" src="images/work-1.jpg" alt="Work 1" />
-              </a>
-            </div>
-            <p>
-              <strong>For:</strong> Zigoland,
-              <strong>Project:</strong> Started a new website from ground up for a new product
-              <a class="blue" href="project.html">details</a>
-            </p>
-          </div>
-        </div>
-        <!-- Work 2 -->
-        <div class="col-lg-4 mb-4">
-          <div class="text-container">
-            <div class="image-container mb-2">
-              <a href="project.html">
-                <img class="img-fluid" src="images/work-2.jpg" alt="Work 2" />
-              </a>
-            </div>
-            <p>
-              <strong>For:</strong> Visodream,
-              <strong>Project:</strong> Developed a new forum for the Visodream community
-              <a class="blue" href="project.html">details</a>
-            </p>
-          </div>
-        </div>
-        <!-- Work 3 -->
-        <div class="col-lg-4 mb-4">
-          <div class="text-container">
-            <div class="image-container mb-2">
-              <a href="project.html">
-                <img class="img-fluid" src="images/work-3.jpg" alt="Work 3" />
-              </a>
-            </div>
-            <p>
-              <strong>For:</strong> Primoday,
-              <strong>Project:</strong> Complete redesign of their corporate website and platform
-              <a class="blue" href="project.html">details</a>
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <!-- Work 4 -->
-        <div class="col-lg-4 mb-4">
-          <div class="text-container">
-            <div class="image-container mb-2">
-              <a href="project.html">
-                <img class="img-fluid" src="images/work-4.jpg" alt="Work 4" />
-              </a>
-            </div>
-            <p>
-              <strong>For:</strong> Nextlite,
-              <strong>Project:</strong> Created a custom video editing and upload web app
-              <a class="blue" href="project.html">details</a>
-            </p>
-          </div>
-        </div>
-        <!-- Work 5 -->
-        <div class="col-lg-4 mb-4">
-          <div class="text-container">
-            <div class="image-container mb-2">
-              <a href="project.html">
-                <img class="img-fluid" src="images/work-5.jpg" alt="Work 5" />
-              </a>
-            </div>
-            <p>
-              <strong>For:</strong> Syncnow,
-              <strong>Project:</strong> Web design for their corporate websites and landing pages
-              <a class="blue" href="project.html">details</a>
-            </p>
-          </div>
-        </div>
-        <!-- Work 6 -->
-        <div class="col-lg-4 mb-4">
-          <div class="text-container">
-            <div class="image-container mb-2">
-              <a href="project.html">
-                <img class="img-fluid" src="images/work-6.jpg" alt="Work 6" />
-              </a>
-            </div>
-            <p>
-              <strong>For:</strong> Shifter,
-              <strong>Project:</strong> Started a new website from ground up for a new product
-              <a class="blue" href="project.html">details</a>
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- FIN WORKS SECTION -->
-
-
-  <!-- ============================================
-       TESTIMONIOS SECTION
-       ============================================ -->
-  <section class="cards-1 py-5">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12 text-center">
-          <h2 class="h2-heading">A few words from people that chose to work with me</h2>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-12">
-          <!-- Testimonial 1 -->
-          <div class="card mb-4">
-            <div class="card-body">
-              <p class="testimonial-text">
-                “Mark is a skilled developer which will do everything possible to deliver the project
-                on time and I really appreciate that.”
-              </p>
-              <div class="details d-flex align-items-center mt-3">
-                <img src="images/testimonial-1.jpg" alt="Samantha Bloom" class="rounded-circle mr-3" width="60" />
-                <div class="text">
-                  <div class="testimonial-author">Samantha Bloom</div>
-                  <div class="occupation">Team Leader – Syncnow</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- Testimonial 2 -->
-          <div class="card mb-4">
-            <div class="card-body">
-              <p class="testimonial-text">
-                “Loved to work with Mark he's such an awesome developer with great attention to details. He
-                also has a great eye for design.”
-              </p>
-              <div class="details d-flex align-items-center mt-3">
-                <img src="images/testimonial-2.jpg" alt="John Rowling" class="rounded-circle mr-3" width="60" />
-                <div class="text">
-                  <div class="testimonial-author">John Rowling</div>
-                  <div class="occupation">Marketing Manager – Nexlite</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- Testimonial 3 -->
-          <div class="card mb-4">
-            <div class="card-body">
-              <p class="testimonial-text">
-                “So glad we started working with Mark. We've used many times his design and development skills
-                for our inhouse online projects.”
-              </p>
-              <div class="details d-flex align-items-center mt-3">
-                <img src="images/testimonial-3.jpg" alt="Lana Smith" class="rounded-circle mr-3" width="60" />
-                <div class="text">
-                  <div class="testimonial-author">Lana Smith</div>
-                  <div class="occupation">General Manager – Shifter</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- FIN TESTIMONIOS SECTION -->
-
-
-  <!-- ============================================
-       PREGUNTAS FRECUENTES SECTION
-       ============================================ -->
-  <section class="accordion-1 py-5">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12 text-center">
-          <h2 class="h2-heading">Frequent Questions</h2>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="accordion" id="accordionExample">
-            <!-- Pregunta 1 -->
-            <div class="card">
-              <div class="card-header" id="headingOne">
-                <button
-                  class="btn btn-link btn-block text-left"
-                  type="button"
-                  data-toggle="collapse"
-                  data-target="#collapseOne"
-                  aria-expanded="true"
-                  aria-controls="collapseOne"
-                >
-                  How can I contact you and quickly get a quote for my online project?
-                </button>
-              </div>
-              <div
-                id="collapseOne"
-                class="collapse show"
-                aria-labelledby="headingOne"
-                data-parent="#accordionExample"
-              >
-                <div class="card-body">
-                  The best way to reach me is through the contact form or by messaging me on my social media
-                  accounts. For a fast quote, please provide detailed project information.
-                </div>
-              </div>
-            </div>
-            <!-- Pregunta 2 -->
-            <div class="card">
-              <div class="card-header" id="headingTwo">
-                <button
-                  class="btn btn-link btn-block text-left collapsed"
-                  type="button"
-                  data-toggle="collapse"
-                  data-target="#collapseTwo"
-                  aria-expanded="false"
-                  aria-controls="collapseTwo"
-                >
-                  Do you create designs from the ground up or you are using themes?
-                </button>
-              </div>
-              <div
-                id="collapseTwo"
-                class="collapse"
-                aria-labelledby="headingTwo"
-                data-parent="#accordionExample"
-              >
-                <div class="card-body">
-                  I offer both: custom design from scratch or can implement premium themes as a base—always
-                  focusing on brand identity and user experience.
-                </div>
-              </div>
-            </div>
-            <!-- Pregunta 3 -->
-            <div class="card">
-              <div class="card-header" id="headingThree">
-                <button
-                  class="btn btn-link btn-block text-left collapsed"
-                  type="button"
-                  data-toggle="collapse"
-                  data-target="#collapseThree"
-                  aria-expanded="false"
-                  aria-controls="collapseThree"
-                >
-                  Will I receive any included maintenance or warranty after project delivery?
-                </button>
-              </div>
-              <div
-                id="collapseThree"
-                class="collapse"
-                aria-labelledby="headingThree"
-                data-parent="#accordionExample"
-              >
-                <div class="card-body">
-                  Yes—each project includes 30 days of free maintenance. After that, we have flexible support
-                  packages to keep your site updated and secure.
-                </div>
-              </div>
-            </div>
-            <!-- Pregunta 4 -->
-            <div class="card">
-              <div class="card-header" id="headingFour">
-                <button
-                  class="btn btn-link btn-block text-left collapsed"
-                  type="button"
-                  data-toggle="collapse"
-                  data-target="#collapseFour"
-                  aria-expanded="false"
-                  aria-controls="collapseFour"
-                >
-                  If something goes wrong with the project can I have my money back?
-                </button>
-              </div>
-              <div
-                id="collapseFour"
-                class="collapse"
-                aria-labelledby="headingFour"
-                data-parent="#accordionExample"
-              >
-                <div class="card-body">
-                  I stand by my work: if deliverables do not match the agreed specifications, we will revise
-                  at no extra cost. Refunds are considered on a case-by-case basis.
-                </div>
-              </div>
-            </div>
-            <!-- Pregunta 5 -->
-            <div class="card">
-              <div class="card-header" id="headingFive">
-                <button
-                  class="btn btn-link btn-block text-left collapsed"
-                  type="button"
-                  data-toggle="collapse"
-                  data-target="#collapseFive"
-                  aria-expanded="false"
-                  aria-controls="collapseFive"
-                >
-                  What's your preferred method of payment and do you need an advance?
-                </button>
-              </div>
-              <div
-                id="collapseFive"
-                class="collapse"
-                aria-labelledby="headingFive"
-                data-parent="#accordionExample"
-              >
-                <div class="card-body">
-                  I accept payments via bank transfer or PayPal. A 30% advance is required to reserve project
-                  time, and the remaining 70% is split into milestones.
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- FIN PREGUNTAS FRECUENTES SECTION -->
-
-
-  <!-- ============================================
-       CONTACT SECTION
-       ============================================ -->
-  <section id="contact" class="form-1 bg-gray py-5">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <h2>Contact Details</h2>
-          <p class="p-heading">
-            For any type of online project please don't hesitate to get in touch with me. The
-            fastest way is to send me your message using the following email
-            <a class="blue no-line" href="mailto:contact@domain.com">contact@domain.com</a>
-          </p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-12">
-          <form id="contactForm">
-            <div class="form-group">
-              <input type="text" class="form-control-input" id="cname" required />
-              <label class="label-control" for="cname">Name</label>
-            </div>
-            <div class="form-group">
-              <input type="email" class="form-control-input" id="cemail" required />
-              <label class="label-control" for="cemail">Email</label>
-            </div>
-            <div class="form-group">
-              <textarea class="form-control-textarea" id="cmessage" required></textarea>
-              <label class="label-control" for="cmessage">Project Details</label>
-            </div>
-            <div class="form-group">
-              <button type="submit" class="form-control-submit-button">Submit</button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- FIN CONTACT SECTION -->
-
-
-  <!-- ============================================
-       FOOTER
-       ============================================ -->
-  <div class="footer bg-gray py-4">
+  <!-- FOOTER -->
+  <footer class="footer bg-gray py-4">
     <div class="container text-center">
-      <div class="social-container mb-3">
-        <span class="fa-stack mx-2">
-          <a href="https://facebook.com/tu-perfil">
-            <i class="fas fa-circle fa-stack-2x"></i>
-            <i class="fab fa-facebook-f fa-stack-1x"></i>
-          </a>
-        </span>
-        <span class="fa-stack mx-2">
-          <a href="https://twitter.com/tu-perfil">
-            <i class="fas fa-circle fa-stack-2x"></i>
-            <i class="fab fa-twitter fa-stack-1x"></i>
-          </a>
-        </span>
-        <span class="fa-stack mx-2">
-          <a href="https://instagram.com/tu-perfil">
-            <i class="fas fa-circle fa-stack-2x"></i>
-            <i class="fab fa-instagram fa-stack-1x"></i>
-          </a>
-        </span>
-        <span class="fa-stack mx-2">
-          <a href="https://linkedin.com/in/tu-perfil">
-            <i class="fas fa-circle fa-stack-2x"></i>
-            <i class="fab fa-linkedin-in fa-stack-1x"></i>
-          </a>
-        </span>
-      </div>
-      <p class="p-small mb-0">
-        Copyright © <a class="no-line" href="https://tu-portfolio.com">Jose Alvarez</a>
-      </p>
-      <p class="p-small mb-0">
-        Distributed By <a class="no-line" href="https://themewagon.com/">Themewagon</a>
-      </p>
+      <p class="p-small mb-0">© 2025 Jose Alvarez</p>
+      <p class="p-small mb-0">Distributed By <a class="no-line" href="https://themewagon.com/">Themewagon</a></p>
     </div>
-  </div>
-  <!-- FIN FOOTER -->
+  </footer>
 
-
-  <!-- ============================================
-       SCRIPTS
-       ============================================ -->
-  <script src="js/jquery.min.js"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
-  <script src="js/bootstrap.min.js"></script> <!-- Bootstrap framework -->
-  <script src="js/jquery.easing.min.js"></script> <!-- jQuery Easing for smooth scrolling -->
-  <script src="js/scripts.js"></script> <!-- Custom JS (incluye Typed.js init y navbar scroll) -->
-  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script> <!-- Typed.js CDN -->
-
-  <!-- Inicialización adicional en caso de que scripts.js no incluya Typed.js init -->
+  <!-- SCRIPTS -->
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.easing.min.js"></script>
+  <script src="js/scripts.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script src="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
+    document.addEventListener("DOMContentLoaded", () => {
       if (document.getElementById("typed-text")) {
         new Typed("#typed-text", {
           strings: [
@@ -859,15 +408,21 @@
             "Mathematician",
             "Computer scientist"
           ],
-          typeSpeed: 60,
-          backSpeed: 30,
-          backDelay: 1500,
-          startDelay: 500,
-          loop: true,
-          showCursor: true,
-          cursorChar: "|"
+          typeSpeed: 60, backSpeed: 30, backDelay: 1500,
+          startDelay: 500, loop: true, showCursor: true, cursorChar: "|"
         });
       }
+      new Glider(document.querySelector(".glider"), {
+        slidesToShow: 3, slidesToScroll: 1, draggable: true,
+        dots: ".dots",
+        arrows: { prev: ".glider-prev", next: ".glider-next" },
+        responsive: [{ breakpoint: 768, settings: { slidesToShow: 1 } }]
+      });
+      AOS.init({ once: true, offset: 100 });
+    });
+    window.addEventListener("scroll", () => {
+      const nav = document.querySelector(".navbar-custom");
+      nav.classList.toggle("scrolled", window.scrollY > 50);
     });
   </script>
 </body>

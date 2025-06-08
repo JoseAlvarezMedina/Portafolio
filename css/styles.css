@@ -1750,3 +1750,44 @@ h1, h2, h4, h5 {
     font-size: 0.9rem;
   }
 }
+
+.tech-circle {
+  display: inline-flex !important;
+  width: 64px !important;
+  height: 64px !important;
+  border-radius: 50% !important;
+  background-color: #fff !important;
+  border: 2px solid #ddd !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 16px !important;
+  font-size: 3rem !important;
+  font-weight: 600 !important;
+  color: #555 !important;
+}
+
+/* Contenedor fijo para las imágenes de proyectos */
+.slide-image {
+  width: 800px;      /* ancho fijo */
+  height: 600px;     /* alto fijo */
+  margin: 0 auto;    /* centra horizontalmente */
+}
+
+/* Imagen ocupa todo el contenedor manteniendo proporción */
+.slide-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* recorta si es necesario para rellenar */
+  border-radius: 4px;
+}
+
+/* Fuerza que el track del glider tome solo el alto de su contenido */
+.glider-contain .glider-track {
+  height: auto !important;
+}
+
+/* Elimina cualquier padding extra que estuviera empujando el container */
+.glider-contain {
+  padding-bottom: 0 !important;
+}
+

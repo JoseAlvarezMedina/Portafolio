@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="VitaSkin: Premium cruelty-free skincare Shopify store" />
+  <meta name="author" content="José Álvarez" />
+
+  <!-- OG Meta Tags -->
+  <meta property="og:site_name" content="VitaSkin" />
+  <meta property="og:site" content="https://vitaskin.com.co" />
+  <meta property="og:title" content="VitaSkin – Premium Skincare Shopify Store" />
+  <meta property="og:description" content="Optimized UX and cruelty-free product catalog on Shopify." />
+  <meta property="og:image" content="images/vitaskin-thumb.jpg" />
+  <meta property="og:url" content="https://vitaskin.com.co" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <title>VitaSkin – Shopify Portfolio</title>
+
+  <!-- Fonts & CSS (same as index.html) -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@600&display=swap"
+    rel="stylesheet"
+  />
+  <link href="css/bootstrap.css" rel="stylesheet" />
+  <link href="css/fontawesome-all.css" rel="stylesheet" />
+  <link href="css/styles.css" rel="stylesheet" />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/aos@2.3.1/dist/aos.css"
+  />
+
+  <!-- Favicon -->
+  <link rel="icon" href="images/favicon.png" />
+
+  <!-- Inline override for hero image -->
+  <style>
+    #header.project-hero {
+      background-image: url('images/vitaskin-hero.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 60vh;
+      position: relative;
+    }
+    #header.project-hero .overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.4);
+    }
+    #header.project-hero .hero-content {
+      position: relative;
+      z-index: 1;
+      color: #fff;
+      text-align: center;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  </style>
+</head>
+
+<body data-spy="scroll" data-target=".navbar-custom">
+  <!-- NAVBAR (same as index.html) -->
+  <nav class="navbar navbar-expand-lg fixed-top navbar-dark navbar-custom">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="images/logonavbar2.png" alt="Logo de Jose Alvarez" />
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="offcanvas"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-collapse offcanvas-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"><a class="nav-link page-scroll" href="index.html#header">Home</a></li>
+          <li class="nav-item"><a class="nav-link page-scroll" href="index.html#about">About Me</a></li>
+          <li class="nav-item"><a class="nav-link page-scroll" href="index.html#education">Education</a></li>
+          <li class="nav-item"><a class="nav-link page-scroll" href="index.html#services">Services</a></li>
+          <li class="nav-item"><a class="nav-link page-scroll" href="index.html#projects">Portfolio</a></li>
+        </ul>
+        <span class="nav-item social-icons">
+          <a href="https://www.linkedin.com/in/jose-alvarez-372263221/" target="_blank" class="text-white mx-2">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="https://github.com/JoseAlvarezMedina" target="_blank" class="text-white mx-2">
+            <i class="fab fa-github"></i>
+          </a>
+        </span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO / PROJECT HEADER -->
+  <header id="header" class="header-hero project-hero">
+    <div class="overlay"></div>
+    <div class="container hero-content">
+      <h1 class="hero-title">VitaSkin</h1>
+      <p class="hero-subtitle">Premium cruelty-free skincare Shopify store with expert UX</p>
+    </div>
+  </header>
+
+  <!-- CTA: View Store & Download Report -->
+  <section class="basic-2 cta-section text-center">
+    <div class="container">
+      <button
+        class="btn btn-success btn-lg btn-rect mr-3"
+        onclick="window.open('https://vitaskin.com.co','_blank')"
+      >
+        <i class="fas fa-store mb-2"></i><br />
+        View Store
+      </button>
+      <button
+        class="btn btn-outline-success btn-lg btn-rect text-success"
+        onclick="window.open('vitaskin_report.pdf','_blank')"
+      >
+        <i class="fas fa-file-pdf mb-2"></i><br />
+        Download Report
+      </button>
+    </div>
+  </section>
+
+  <!-- PROJECT DESCRIPTION -->
+  <section class="ex-basic-1 pt-5 pb-5" data-aos="fade-up">
+    <div class="container">
+      <h2 class="h2-heading mb-4">Technical Overview</h2>
+      <p class="p-heading">
+        VitaSkin is a Shopify store showcasing premium, cruelty-free skincare with a focus on seamless UX.
+      </p>
+      <ul class="list-unstyled li-space-lg mb-4">
+        <li class="media mb-2">
+          <i class="fas fa-check-circle text-success mr-3"></i>
+          <div class="media-body">
+            <strong>Liquid Templates:</strong> Custom collection & product templates for intuitive browsing.
+          </div>
+        </li>
+        <li class="media mb-2">
+          <i class="fas fa-check-circle text-success mr-3"></i>
+          <div class="media-body">
+            <strong>Front-End:</strong> HTML5, CSS3, JS & Liquid for dynamic filters and responsive design.
+          </div>
+        </li>
+        <li class="media mb-2">
+          <i class="fas fa-check-circle text-success mr-3"></i>
+          <div class="media-body">
+            <strong>Integrations:</strong> Local payments, shipping & newsletter signup.
+          </div>
+        </li>
+        <li class="media mb-2">
+          <i class="fas fa-check-circle text-success mr-3"></i>
+          <div class="media-body">
+            <strong>SEO & Performance:</strong> Image optimization, lazy-loading & semantic markup.
+          </div>
+        </li>
+      </ul>
+      <p class="mb-0">
+        The architecture uses efficient collections, clear navigation & custom templates for product & blog pages.
+      </p>
+    </div>
+  </section>
+
+  <!-- KEY FEATURES CARDS -->
+  <section class="ex-cards-1 pt-3 pb-3 bg-white">
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-md-4 mb-4">
+          <i class="fas fa-mobile-alt fa-3x text-primary mb-3"></i>
+          <h5>Responsive Design</h5>
+          <p>Fluid experience across mobile and desktop.</p>
+        </div>
+        <div class="col-md-4 mb-4">
+          <i class="fas fa-filter fa-3x text-success mb-3"></i>
+          <h5>Dynamic Filters</h5>
+          <p>Real-time filtering by price, category & availability.</p>
+        </div>
+        <div class="col-md-4 mb-4">
+          <i class="fas fa-bullhorn fa-3x text-warning mb-3"></i>
+          <h5>Promotional Banners</h5>
+          <p>Featured offers, bundles & campaign highlights.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONCLUSIONS & NEXT STEPS -->
+  <section class="ex-basic-1 pt-3 pb-5 bg-light">
+    <div class="container">
+      <h2 class="h2-heading mb-3">Conclusions & Next Steps</h2>
+      <p class="p-heading mb-4">
+        Shopify implementation provided a smooth shopping experience and easy catalog management. To continue improving:
+      </p>
+      <ol class="li-space-lg">
+        <li>Integrate Google Analytics & Facebook Pixel for advanced tracking.</li>
+        <li>Add personalized recommendations via third-party apps.</li>
+        <li>Run A/B tests on key pages to boost conversions.</li>
+        <li>Incorporate customer reviews to build trust.</li>
+      </ol>
+      <a class="btn-solid-reg mt-4" href="#contact">Get in Touch</a>
+    </div>
+  </section>
+
+  <!-- FOOTER (same as index.html) -->
+  <footer class="footer bg-gray py-4">
+    <div class="container text-center">
+      <p class="p-small mb-0">© 2025 José Álvarez</p>
+    </div>
+  </footer>
+
+  <!-- Scripts (same as index.html) -->
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.easing.min.js"></script>
+  <script src="js/scripts.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script src="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      AOS.init({ once: true, offset: 100 });
+    });
+  </script>
+</body>
+</html>
