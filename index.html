@@ -40,9 +40,17 @@
   />
 
   <style>
-       /* SECTION SPACING */
-    #projects { margin: 0; padding: 0; }
-    #projects .container { padding: 2rem 0 1rem; }
+    /* === About: texto más legible === */
+    #about p,
+    #about ul li {
+      color: #ddd !important;
+    }
+
+    /* === Experience logo circular === */
+    #experience .media img {
+      border-radius: 50%;
+    }
+
 
     /* = SLICK OVERRIDES */
     .projects-slider .slick-list { margin: 0 -10px; }
@@ -174,39 +182,134 @@
     <div class="container">
       <div class="row align-items-center">
         <div class="col-lg-5 mb-4 mb-lg-0" data-aos="fade-right">
-          <img src="images/fotojose.jpeg" alt="Jose Alvarez"
-               class="img-fluid rounded shadow-sm fade-in-fallback" />
+          <img src="images/fotojose.jpeg" alt="Jose Alvarez" class="img-fluid rounded shadow-sm fade-in-fallback" />
         </div>
         <div class="col-lg-7" data-aos="fade-left">
           <h2 class="mb-3">About Me</h2>
-          <p class="lead mb-3 fade-in-fallback">
-            I’m a <span class="highlight">Mathematics &amp; Computer Science</span>
-            graduate (2020–2025) from Universidad del Rosario with a
-            <span class="highlight">Minor in AI</span> (2024–2025).
+          <p class="lead mb-3">
+            I’m a <span class="highlight">Mathematics &amp; Computer Science</span> graduate (2020–2025)
+            from Universidad del Rosario with a <span class="highlight">Minor in AI</span> (2024–2025).
           </p>
-          <div class="mb-3 fade-in-fallback">
-            <strong>Technical Expertise:</strong>
-            <ul class="ms-3">
-              <li><span class="highlight">Machine Learning &amp; Data Analysis</span>:
-                Python, pandas, scikit-learn, TensorFlow, PyTorch</li>
-              <li><span class="highlight">Web &amp; Front-End</span>:
-                Bootstrap, responsive UI, data visualization</li>
-              <li><span class="highlight">Deployment &amp; Workflow</span>:
-                Git, basic MLOps pipelines, automated testing</li>
-            </ul>
-          </div>
-          <div class="mb-3 fade-in-fallback">
-            <strong>Values:</strong>
-            <span class="highlight">Teamwork</span>,
-            <span class="highlight">Autonomy</span>,
-            <span class="highlight">Communication</span>,
-            <span class="highlight">Continuous Learning</span>
-          </div>
-          <p class="fade-in-fallback">
+          <strong>Technical Expertise:</strong>
+          <ul class="ms-3">
+            <li><span class="highlight">Machine Learning &amp; Data Analysis</span>: Python, pandas, scikit-learn, TensorFlow, PyTorch</li>
+            <li><span class="highlight">Web &amp; Front-End</span>: Bootstrap, responsive UI, data visualization</li>
+            <li><span class="highlight">Deployment &amp; Workflow</span>: Git, basic MLOps pipelines, automated testing</li>
+          </ul>
+          <strong>Values:</strong> 
+          <span class="highlight">Teamwork</span>, 
+          <span class="highlight">Autonomy</span>, 
+          <span class="highlight">Communication</span>, 
+          <span class="highlight">Continuous Learning</span>
+          <p class="mt-3">
             Recently, I built a <span class="highlight">LangChain chatbot</span>
             to streamline customer support, cutting response times by over 40%.
           </p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CORE SKILLS -->
+  <section id="core-skills" class="bg-white py-5">
+    <div class="container">
+      <div class="row justify-content-center mb-4">
+        <div class="col-12 text-center">
+          <h2 class="mb-3">Core Skills</h2>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <!-- Machine Learning -->
+        <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-3 text-center">
+          <div class="skill-card p-2">
+            <i class="fas fa-robot fa-2x skill-icon mb-1"></i><br />
+            <span class="skill-label">Machine Learning</span>
+          </div>
+        </div>
+        <!-- Deep Learning -->
+        <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-3 text-center">
+          <div class="skill-card p-2">
+            <i class="fas fa-brain fa-2x skill-icon mb-1"></i><br />
+            <span class="skill-label">Deep Learning</span>
+          </div>
+        </div>
+        <!-- NLP -->
+        <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-3 text-center">
+          <div class="skill-card p-2">
+            <i class="fas fa-language fa-2x skill-icon mb-1"></i><br />
+            <span class="skill-label">NLP</span>
+          </div>
+        </div>
+        <!-- Computer Vision -->
+        <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-3 text-center">
+          <div class="skill-card p-2">
+            <i class="fas fa-image fa-2x skill-icon mb-1"></i><br />
+            <span class="skill-label">Computer Vision</span>
+          </div>
+        </div>
+        <!-- Applied Math -->
+        <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-3 text-center">
+          <div class="skill-card p-2">
+            <i class="fas fa-square-root-alt fa-2x skill-icon mb-1"></i><br />
+            <span class="skill-label">Applied Math</span>
+          </div>
+        </div>
+        <!-- Statistical Modeling -->
+        <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-3 text-center">
+          <div class="skill-card p-2">
+            <i class="fas fa-chart-line fa-2x skill-icon mb-1"></i><br />
+            <span class="skill-label">Stat Modeling</span>
+          </div>
+        </div>
+        <!-- Python -->
+        <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-3 text-center">
+          <div class="skill-card p-2">
+            <i class="fab fa-python fa-2x skill-icon mb-1"></i><br />
+            <span class="skill-label">Python</span>
+          </div>
+        </div>
+        <!-- TensorFlow -->
+        <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-3 text-center">
+          <div class="skill-card p-2">
+            <i class="fas fa-cogs fa-2x skill-icon mb-1"></i><br />
+            <span class="skill-label">TensorFlow</span>
+          </div>
+        </div>
+        <!-- PyTorch -->
+        <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-3 text-center">
+          <div class="skill-card p-2">
+            <i class="fas fa-fire fa-2x skill-icon mb-1"></i><br />
+            <span class="skill-label">PyTorch</span>
+          </div>
+        </div>
+        <!-- AWS / Docker -->
+        <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-3 text-center">
+          <div class="skill-card p-2">
+            <i class="fas fa-cloud fa-2x skill-icon mb-1"></i><br />
+            <span class="skill-label">AWS / Docker</span>
+          </div>
+        </div>
+        <!-- Data Analytics -->
+        <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-3 text-center">
+          <div class="skill-card p-2">
+            <i class="fas fa-chart-bar fa-2x skill-icon mb-1"></i><br />
+            <span class="skill-label">Data Analytics</span>
+          </div>
+        </div>
+        <!-- Web Development -->
+        <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-3 text-center">
+          <div class="skill-card p-2">
+            <i class="fas fa-code fa-2x skill-icon mb-1"></i><br />
+            <span class="skill-label">Web Dev</span>
+          </div>
+        </div>
+        <!-- MLOps -->
+        <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-3 text-center">
+          <div class="skill-card p-2">
+            <i class="fas fa-tools fa-2x skill-icon mb-1"></i><br />
+            <span class="skill-label">MLOps</span>
+          </div>
+        </
       </div>
     </div>
   </section>
@@ -219,14 +322,14 @@
         <div class="col-lg-8">
           <div class="media align-items-center">
             <a href="https://www.linkedin.com/company/bymind-col/" target="_blank" class="me-3">
-              <img src="images/logobymind.jpg" alt="Bymind Logo" style="width:50px; height:50px;">
+              <img src="images/logobymind.jpg" alt="Bymind Logo" width="50" height="50" />
             </a>
             <div class="media-body">
               <h5>Web Developer, Bymind</h5>
               <p>
-                Started, managed &amp; led 100% custom landing pages &amp; Shopify e-commerce projects.
-                Used <span class="highlight">Bootstrap</span> and contributed heavily to the front-end,
-                working one-on-one with clients to deliver tailored design &amp; functionality.
+                Started, managed &amp; led 100% custom landing pages &amp; Shopify e-commerce projects
+                (including VitaSkin) using Bootstrap, delivering
+                tailored design &amp; functionality 1-on-1 with clients.
               </p>
             </div>
           </div>
@@ -234,6 +337,7 @@
       </div>
     </div>
   </section>
+
 
   <!-- EDUCATION -->
   <section id="education" class="py-5" data-aos="fade-up">
@@ -383,7 +487,6 @@
   <footer class="footer bg-gray py-4">
     <div class="container text-center">
       <p class="p-small mb-0">© 2025 Jose Alvarez</p>
-      <p class="p-small mb-0">Distributed by <a href="https://themewagon.com/">Themewagon</a></p>
     </div>
   </footer>
 

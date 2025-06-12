@@ -1781,29 +1781,4 @@ h1, h2, h4, h5 {
   border-radius: 4px;
 }
 
-/* Fuerza que el track del glider tome solo el alto de su contenido */
-.glider-contain .glider-track {
-  height: auto !important;
-}
 
-/* Elimina cualquier padding extra que estuviera empujando el container */
-.glider-contain {
-  padding-bottom: 0 !important;
-}
-
-/* === Eliminar espacio extra al final de Portfolio === */
-#projects {
-  /* Quitamos TODO padding/ margen al bottom */
-  padding-bottom: 0 !important;
-  margin-bottom: 0 !important;
-}
-
-/* También anulamos el padding que pueda traer basic-3 */
-section.basic-3#projects {
-  padding-bottom: 0 !important;
-}
-
-/* Y quitamos cualquier margen inferior en el contenedor de Glider */
-#projects .glider-contain {
-  margin-bottom: 0 !important;
-}
